@@ -30,7 +30,47 @@ public class DemoOperator{
     y-=1;
     System.out.println("y=" + y);
     
-  
+    // *=
+      int p = 4;
+      p = p * 2; //8
+      p *=2; //16
+      p /= 4; //4 . p = 16 / 4.
+      System.out.println("p=" + p);
+
+      int z = 10;
+      z = z % 3; //1
+      int j = 10;
+      j %= 3 ;
+      System.out.println("z=" + z +", j=" + j);
+
+      String s = "Hello";
+      s = s + "world";
+      s += "!!!";
+      System.out.println("s=" + s);
+
+      // >, <, >=, <=
+    boolean r1 = 10 > 3;
+    boolean r3 = 10 >=10;
+    System.out.println(r1);
+    System.out.println(r3);
+
+    // and (&&), or (!!)
+    boolean r5 = 10 > 3 && 20 >=20; // true & true => true
+    boolean r6 = 10 > 3 && 4 < 4; // true & false => false
+    System.out.println(r5); System.out.println(r6);
+
+    boolean r7 = 10 > 3 && 20 >= 20; // true or true => true 
+    boolean r8 = 10 > 3 && 20 < 18; // true or false => true
+    boolean r9 = 3 > 10 && 20 < 19; //false or false => false
+
+    char c10 = 'A';
+    char c11 = 'B';
+    boolean b12 = c10 ==c11; // false
+    System.out.println("b12=" + b12);
+
+    boolean b13 = 'c' != '0'; // true , 係咪唔等如
+    System.out.println("b13=" + b13);
+
   }
 
 }
