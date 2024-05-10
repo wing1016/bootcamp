@@ -1,6 +1,6 @@
 public class DemoString {
   public static void main(String[] args) {
-    // String stores text
+    // String stores text. must use double quote
     String x = "hello";
     String y = "afvafsvaf";
     String withSpace = "hello  h   e ll  o";
