@@ -54,7 +54,7 @@ public class DemoOperator{
     System.out.println(r1);
     System.out.println(r3);
 
-    // and (&&), or (!!)
+    // and (&&), or (!!) (||)
     boolean r5 = 10 > 3 && 20 >=20; // true & true => true
     boolean r6 = 10 > 3 && 4 < 4; // true & false => false
     System.out.println(r5); System.out.println(r6);
@@ -64,12 +64,35 @@ public class DemoOperator{
     boolean r9 = 3 > 10 && 20 < 19; //false or false => false
 
     char c10 = 'A';
+    boolean b12 = c10 ==c11; // false  係咪等如
     char c11 = 'B';
-    boolean b12 = c10 ==c11; // false
     System.out.println("b12=" + b12);
 
-    boolean b13 = 'c' != '0'; // true , 係咪唔等如
+    boolean b13 = 'c' != '0'; // true , 係咪唔等如 !=
     System.out.println("b13=" + b13);
+
+
+    int n =3;
+    int resultn = n++ * 3; 
+    //original n multiply 3 first , then assign 9 to resultn , then n=n+1
+
+    System.out.println(resultn);//9
+    System.out.println(n);//4
+
+    int m =3;
+    int resultm = ++m * 5;
+    //m = m + 1 first, multiply 5, assign 25 to resultm
+    System.out.println(resultm); //25
+    System.out.println(m);//5
+
+
+    int k =4;
+    int resultk = k++ * 7 * ++k;
+    // 168 = (4 * 7) * 6
+    System.out.println(resultm); 
+    System.out.println(m);
+
+
 
   }
 
