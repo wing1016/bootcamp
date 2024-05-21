@@ -42,6 +42,17 @@ public class DemoNestedLoop {
     // 1 3 5 7 9 12 14 16 18 20 < need to print this from between 1 - 20
 
 
+
+    for (int i = 1; i < 21; i++) {
+      if (i % 2 == 1 && i < 10) {
+        System.out.print(i + " ");
+      } else if (i % 2 == 0 && i > 10) {
+        System.out.print(i + " ");
+      }
+    }
+
+    System.out.println("");
+
     // searching
     // Find the index of first character 'a' answer is 14
     String s = "Vincent Book Game Laptop";
@@ -50,7 +61,7 @@ public class DemoNestedLoop {
       ch = s.charAt(i);
       if (ch == 'a') {
         System.out.println("index of first 'a' is " + i);
-        break;  // break is for exit Loop, not If
+        break; // break is for exit Loop, not If
       }
       // System.out.println(ch);
       // System.out.println("index of first a is" + i);
