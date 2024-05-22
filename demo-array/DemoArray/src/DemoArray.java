@@ -5,7 +5,7 @@ public class DemoArray {
 
   public static void main(String[] args) {
 
-    int[] arr = new int[3];
+    int[] arr = new int[3]; // array is an object
     arr[0] = 10;
     arr[1] = 20;
     arr[2] = -3;
@@ -115,7 +115,7 @@ public class DemoArray {
       for (int i = 0; i < 4; i++) {
 
         if (k == 1) {
-          r1 += c1[i];
+          r1 += c1[i]; // String value + char > output is string
         } else if (k == 2) {
           r1 += c2[i];
         }
@@ -126,15 +126,25 @@ public class DemoArray {
     // System.out.println(Arrays.toString(c1));
     // System.out.println(Arrays.toString(c1) + Arrays.toString(c2));
 
+
+    char[] c3 = new char[] {'o', 'a', 'k', 'p', 'a', 'b'};
+    char[] c4 = new char[] {'a', 'b', 'f', 't'};
+    // result : obkta
     String r3 = "";
-    for (int i = 0; i < 4; i++) {
-      if (i % 2 == 0) {
-        r3 += c1[i];
-      } else {
-        r3 += c2[i];
+
+    int length = c3.length > c4.length ? c3.length : c4.length; // < Elegant
+
+    for (int i = 0; i < length; i++) {
+      if (i % 2 == 0 && i < c3.length) {
+        r3 += c3[i];
+      } else if (i % 2 == 1 && i < c4.length) {
+        r3 += c4[i];
       }
+      // if (r3.length()==5) {
+      // break;
+      // }
     }
-    System.out.println(r3);
+    System.out.println(r3); // obkt
 
   }
 }
