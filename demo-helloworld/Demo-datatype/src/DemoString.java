@@ -186,7 +186,7 @@ public class DemoString {
       if (strings[i].toLowerCase().contains("ell")) {
         count++;
       }
-    }
+    } 
     System.out.println(count + " string contains 'ell'");
   }
 }
