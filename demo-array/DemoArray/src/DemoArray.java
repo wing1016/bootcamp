@@ -146,5 +146,105 @@ public class DemoArray {
     }
     System.out.println(r3); // obkt
 
+    // Array
+    int[] arr5 = new int[] {4, 8, 3};
+    int sum = 0;
+    int count1 = 0;
+    for (int i = 0; i < arr5.length; i++) {
+      sum += arr5[i];
+      count1++;
+    }
+    System.out.println("Average is " + sum / count1);
+
+    // swapping in array
+    int[] arr7 = new int[] {6, 10, -4, 15};
+    // swap -4 and 6 -> {-4, 10, 6, 15}
+    int temp = arr7[2];
+    arr7[2] = arr7[0];
+    arr7[0] = temp;
+
+    System.out.println(Arrays.toString(arr7)); // [-4, 10, 6, 15]
+
+    // Sorting -> [-4, 10, 6, 15]
+    // for loop
+    // nested loop
+
+
+    // Level 1 : arr7 -> [-4, 6, 10, 15]
+    // move -4 to the tail > [6, 10, 15, -4]
+    int maxArr = Integer.MAX_VALUE;
+    int tm;
+    for (int i = 0; i < arr7.length - 1; i++) {
+
+      tm = arr7[i];
+      arr7[i] = arr7[i + 1];
+      arr7[i + 1] = tm;
+
+    }
+
+    System.out.println(Arrays.toString(arr7));
+
+
+
+    // int tmp;
+    // int max1 = Integer.MIN_VALUE;
+    // for (int i = 0; i < arr7.length; i++) {
+    // if (isExist) {
+
+    // }
+    // }
+
+
+    // move max to the last
+    int[] arr8 = new int[] {10, 6, 15, -4};
+    int max8 = Integer.MAX_VALUE;
+    int tmp8;
+
+    for (int i = 0; i < arr8.length - 1; i++) {
+      if (arr8[i] > arr8[i + 1]) {
+        // swap
+        tmp8 = arr8[i];
+        arr8[i] = arr8[i + 1];
+        arr8[i + 1] = tmp8;
+      }
+    }
+    System.out.println(Arrays.toString(arr8));
+
+    // Level 3  : sort array from small to large
+    for (int j = 0; j < arr8.length; j++) {
+
+      for (int i = 0; i < arr8.length - 1; i++) {
+        if (arr8[i] > arr8[i + 1]) {
+          // swap
+          tmp8 = arr8[i];
+          arr8[i] = arr8[i + 1];
+          arr8[i + 1] = tmp8;
+        }
+      }
+    }
+    System.out.println("Swap max to end");
+    System.out.println(Arrays.toString(arr8));
+
+    // Swap char value
+    String s ="hello";  // swap e and o > holle
+    String tmpChar ="";
+    // convert to Char Array
+    char[] arr9 = new char[s.length()];
+    char t2 = ' ';
+
+    arr9 = s.toCharArray();
+
+    // for (int i = 0; i < s.length(); i++) {
+    //   arr9[i] += s.charAt(i);      
+    // }
+
+    t2 = arr9[1];
+    arr9[1] = arr9[4];
+    arr9[4] = t2;
+
+    
+     s = String.valueOf(arr9);
+    System.out.println(s);
+
   }
 }

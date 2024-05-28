@@ -18,6 +18,17 @@ public class DemoMethod {
         System.out.println(max(new int[] {2, 1, 8, 77, 4, 1}));
         System.out.println(isElderly(65));
         System.out.println(isSubstring("apple", "pplx"));
+
+        int g = 3;
+        System.out.println(++g * 8);
+
+        // circle area
+        System.out.println(circleArea(3));
+
+
+        //double * double > error . fix double
+        System.out.println(0.2 * 0.1);
+
     }
 
     public static int sum(int x, int y) {
@@ -90,6 +101,8 @@ public class DemoMethod {
             for (int j = 0; j < substr.length(); j++) {
                 // 00 0
                 // 01 1
+                // 02 2
+                // 03 3
 
                 if (str.charAt(i + j) != substr.charAt(j)) {
                     break;
@@ -100,5 +113,10 @@ public class DemoMethod {
             }
         }
         return false;
+    }
+
+    public static double circleArea(int radius) {
+
+        return radius * radius * Math.PI; // int * int * double 2*2*2.0=8.0
     }
 }
