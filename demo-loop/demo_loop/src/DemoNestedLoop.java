@@ -70,6 +70,45 @@ public class DemoNestedLoop {
     // System.out.println(s.charAt(14));
     // System.out.println(s.length());
 
-  }
+    // *****
+    // for (int i = 0; i < 5; i++) {
+    // System.out.print("*");
+    // }
 
+    // *****
+    // *****
+    // *****
+    // *****
+    // *****
+    // tips 1. new line. tips 2. Nested loop
+    for (int row = 0; row < 5; row++) {
+
+      for (int j = 0; j < 5; j++) {
+        System.out.print("*");
+      }
+      System.out.println(); // System.out.println("");
+    }
+
+    System.out.println(" - - - -");
+    //*****
+    //****
+    //***
+    //**
+    //*
+    // 00 01 02 03
+    for (int row = 0; row < 5; row++) {
+
+      for (int j = 0; j < 5 - row; j++) {
+        System.out.print("*");
+      }
+      System.out.println(); // System.out.println("");
+    }
+
+    //*
+    //**
+    //***
+    //**
+    //*
+
+  }
 }

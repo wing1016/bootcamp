@@ -183,10 +183,54 @@ public class DemoString {
     // how many string contains "ell" ignore case
     int count = 0;
     for (int i = 0; i < strings.length; i++) {
-      if (strings[i].toLowerCase().contains("ell")) {
+      // if (strings[i].toLowerCase().contains("ell")) {
+      if (strings[i].toUpperCase().contains("ELL")) {
         count++;
       }
-    } 
+    }
     System.out.println(count + " string contains 'ell'");
+
+    for (int i = 0; i < strings.length; i++) {
+
+      if (strings[i].trim().equalsIgnoreCase("hello")) {
+        System.out.println(strings[i]);
+
+      }
+    }
+
+    // indnex Of
+    String s13 = "Helloll";
+    System.out.println(s13.indexOf("ll")); // String
+    System.out.println(s13.indexOf('e')); // char
+    System.out.println(s13.indexOf("ll", 4));
+    System.out.println(s13.indexOf("ll", 6));
+    System.out.println(s13.indexOf(101)); // down 101 to char , ascii 101 is 'e'
+
+
+    System.out.println(s13.lastIndexOf("ll")); // last index
+
+    String s14 = "abc";
+
+    String s15 = "abc";
+    s15 = s15.concat(" def"); // better better performance than using '+'
+    System.out.println(s15);
+
+    String s16 = "abc";
+    String s17 = "abc";
+    // String compareTo
+    System.out.println("s14 vs s15");
+    System.out.println(s16.compareTo(s17));
+    System.out.println(s16.equals(s17));
+    System.out.println(s16 == s17);
+
+
+    char c = 'a' + 1; // (char) 'a' + 1
+    System.out.println(c); 
+
+    char d = (char) 'a' + 1;
+    System.out.println(d);
+
+
+
   }
 }
