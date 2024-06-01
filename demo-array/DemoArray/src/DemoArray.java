@@ -210,10 +210,12 @@ public class DemoArray {
     }
     System.out.println(Arrays.toString(arr8));
 
-    // Level 3  : sort array from small to large
-    for (int j = 0; j < arr8.length; j++) {
+    // Level 3 : sort array from small to large
+    // bubble sort
+    // for loop
+    for (int j = 0; j < arr8.length - 1; j++) {
 
-      for (int i = 0; i < arr8.length - 1; i++) {
+      for (int i = 0; i < arr8.length - i - 1; i++) {
         if (arr8[i] > arr8[i + 1]) {
           // swap
           tmp8 = arr8[i];
@@ -226,8 +228,8 @@ public class DemoArray {
     System.out.println(Arrays.toString(arr8));
 
     // Swap char value
-    String s ="hello";  // swap e and o > holle
-    String tmpChar ="";
+    String s = "hello"; // swap e and o > holle
+    String tmpChar = "";
     // convert to Char Array
     char[] arr9 = new char[s.length()];
     char t2 = ' ';
@@ -235,15 +237,15 @@ public class DemoArray {
     arr9 = s.toCharArray();
 
     // for (int i = 0; i < s.length(); i++) {
-    //   arr9[i] += s.charAt(i);      
+    // arr9[i] += s.charAt(i);
     // }
 
     t2 = arr9[1];
     arr9[1] = arr9[4];
     arr9[4] = t2;
 
-    
-     s = String.valueOf(arr9);
+
+    s = String.valueOf(arr9);
     System.out.println(s);
 
   }

@@ -115,6 +115,7 @@ public class DemoMethod {
         return false;
     }
 
+    //java > pi
     public static double circleArea(int radius) {
 
         return radius * radius * Math.PI; // int * int * double 2*2*2.0=8.0
