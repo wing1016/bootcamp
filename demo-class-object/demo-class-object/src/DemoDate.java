@@ -1,12 +1,12 @@
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
-import javax.management.monitor.Monitor;
 
 public class DemoDate {
   public static void main(String[] args) {
     // 17 types ( 8 primitives + 8 wrapper classes + String )
     // similar to valueOf
-
+    LocalDateTime Ldt;
     LocalDate ld = LocalDate.of(2022, 12, 31);
     System.out.println(ld.toString());
 
@@ -28,6 +28,8 @@ public class DemoDate {
    System.out.println(ld.getDayOfMonth()); // 31, int
    System.out.println(ld.getDayOfYear()); // 365
    System.out.println(ld.getDayOfWeek()); // SATURDAY
+
+   DemoDate dd = new DemoDate();
 
   }
 }

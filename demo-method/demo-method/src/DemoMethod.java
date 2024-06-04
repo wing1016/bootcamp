@@ -120,4 +120,26 @@ public class DemoMethod {
 
         return radius * radius * Math.PI; // int * int * double 2*2*2.0=8.0
     }
+
+    
+    
+    class Solution {
+        public int scoreOfString(String s) {
+            //for loop
+            //chatAt
+            //Chat -> int
+    
+            int tmp; 
+            int tmp2;
+            int tmpSum;
+    
+            for(int i = 0; i<s.length() ;i++){
+                // tmp = s.toString;
+            }
+            
+            return 1;
+        }
+    }
+
+
 }
