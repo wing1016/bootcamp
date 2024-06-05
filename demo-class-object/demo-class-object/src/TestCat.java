@@ -12,9 +12,14 @@ public class TestCat {
     c1.setAge(10);
     //c2.setAge(7);
 
-    System.out.println(c1.getAge());
+    System.out.println(c1.getAge()); //10
     System.out.println(c2.setAge(7));
   }
 
   TestCat tc = new TestCat();  // new a class object for TestCat class
+
+  Cat c3 = new Cat();
+  
+
+
 }

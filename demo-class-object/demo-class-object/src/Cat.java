@@ -12,6 +12,8 @@ public class Cat {  //class name -> able to describe physical object
   private LocalDate bday;
   private int age;
 
+  //if no constructor is defined, an empty constructor is auto made
+
   //behavior
   // instance method
   // setAge() is a method that can be called by object only

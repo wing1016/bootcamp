@@ -1,6 +1,10 @@
 public class Calculator {
-  private int i1;
-  private int i2;
+
+  // int x = 5, y = 6, z = 50;    declare multiple variable  
+  // System.out.println(x + y + z);
+
+  private int i1, i2;
+  // private int i2;
 
   public void setI1(int i) {
     this.i1 = i;
@@ -32,8 +36,8 @@ public class Calculator {
     c1.setI2(3);
 
     // instance method (object method)
-    c1.sum(); // 2 + 3
-    c1.multiply(); // 2 * 3
+    c1.sum(); // 2 + 3 = 5
+    c1.multiply(); // 2 * 3 = 6
 
     System.out.println(c1.sum());
     System.out.println(c1.multiply());
