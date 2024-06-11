@@ -23,6 +23,35 @@ public class DemoInteger {
     // useless .. copy from sir code in github
     System.out.println(i3 >= i4);
     System.out.println(i1 >= i2);
+
+    // Float, Double ( No Internal Cache in JVM )
+    Float f1 = 10.1234f; // autobox: -> float value -> Float Object
+    Float f2 = 10.1234f; // autobox: -> float value -> Float Object
+
+    System.out.println(f1 == f2); // false
+
+    Double d1 = 128.1234d; // autobox: -> double value -> Double Object
+    Double d2 = 128.1234d; // autobox: -> double value -> Double Object
+
+    System.out.println(d1 == d2); // false
+
+    Boolean b1 = true;  //autobox: -> boolean value -> Boolean Object
+    Boolean b2 = true;
+
+    System.out.println(b1 == b2); //true
+
+    //Character support internal cache ( -128 to 127 )
+    Character c1 = 'c';  //autobox: -> character value -> Character Object
+    Character c2 = 'c';
+
+    System.out.println(c1 == c2); //true
+
+    Character c3 = '我';  //autobox: -> character value -> Character Object
+    Character c4 = '我';
+
+    System.out.println(c3 == c4); //true
+
+
   }
 
 }

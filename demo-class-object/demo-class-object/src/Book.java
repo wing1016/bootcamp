@@ -5,6 +5,12 @@ public class Book {
   private int numOfPage;
   private LocalDate publishDate;
 
+  public Book(String name, int n){
+    this.name = name;
+    this.numOfPage = n;
+
+  }
+
   public boolean setName(String name) {
     this.name = name;
     return true;      // just try to see set method that not void
@@ -36,6 +42,10 @@ public class Book {
 
    // Book.hello();
     System.out.println(Book.hello());// system.out.println is also a static method
+    Book b1 = new Book("ABC", 95);
+    System.out.println(b1.numOfPage);
+    System.out.println(b1.getNumOfPage());
+
   }
 
 }
