@@ -1,23 +1,21 @@
+
+import java.util.List;
+
 public class Test {
 
-   // class Solution {
-      public int maximumWealth(int[][] accounts) {
 
-         for(int i = 0 ; i < accounts.length ; i++){
-             for(int j =0 ; accounts[i].length ; j++){
-                 System.out.println(accounts[i][j]);
-             }
+
+   public int countPairs(List<Integer> nums, int target) {
+      
+      int count = 0;
+      for (int i = 0; i < nums.size(); i++) {
+         for (int j = 0; j < nums.size(); j++) {
+            if (i < j && nums.get(i) + nums.get(j) < target) {
+               count++;
+            }
          }
-         return 1;
-     }
-   // }
-
-
-   public static void main(String[] args) {
-      Test t = new Test();
-
-      System.out.println(t.smallestEvenMultiple(5));
-
+      }
+      return count;
    }
 
 

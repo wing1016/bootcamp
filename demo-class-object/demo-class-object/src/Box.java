@@ -41,7 +41,7 @@ public class Box {
 
   public void addString(String s) {
     String[] tmp = new String[this.strings.length + 1];
-    for (int i = 0; i < this.strings.length; i++) {
+    f String[] tmp = new String[this.strings.length + 1];or (int i = 0; i < this.strings.length; i++) {
       tmp[i] = this.strings[i];
     }
     tmp[this.strings.length] = s;
@@ -50,6 +50,7 @@ public class Box {
 
   public void deleteString(String s){
     //reverse arr string, and remove corresponding Strings
+    String[] tmp = new String[this.strings.length - 1];
 
   }
 
