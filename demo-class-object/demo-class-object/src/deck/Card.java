@@ -1,5 +1,7 @@
 package deck;
 
+import java.util.Arrays;
+
 public class Card {
 
 
@@ -28,29 +30,58 @@ public class Card {
   }
 
   public String toString() {
-    return "Card( " + this.suit + " : " + this.rank + " )";
+    return " " + this.suit + " : " + this.rank + " ";
   }
 
 
   public static void main(String[] args) {
     Deck deck = new Deck();
     Card[] cards = deck.getCards();
-    System.out.println(cards.length);
-    for (Card card : cards) {
-      System.out.println(card);
-    }
+    System.out.println("= = =");
+    // for (Card card : cards) {
+    // System.out.println(card);
+    // }
 
     // deck.shuffle(10234);
-    ShuffleManager sm = new ShuffleManager(deck.getCards());
-    sm.shuffle(14567);
-    for (Card card : deck.getCards()) {
-      System.out.println(card);
-    }
+    ShuffleManager sm = new ShuffleManager(cards);
+    System.out.println(Arrays.toString(sm.getCards()));
+    System.out.println("");
 
-    // cards.shuffle(100);
+   
+    sm.cutCards(1);
+    System.out.println(Arrays.toString(sm.getCards()));
+    sm.shuffle(1); sm.midToTop(1);  sm.cutCards(1);sm.midToTop(1);     sm.shuffle(1); sm.midToTop(1);  sm.cutCards(1);sm.midToTop(1); 
+    sm.shuffle(1); sm.midToTop(1);  sm.cutCards(1);sm.midToTop(1);
+    System.out.println(Arrays.toString(sm.getCards()));
 
-    // double d = 3.333000000000;
-    // double d2 = 2.000000000;
-    // System.out.println(d * d2);
+
+    // for (Card card : sm.getCards()) {
+    //   System.out.println(card);
+    // }
+
+
   }
 }
+// sm.midToTop(1);
+// System.out.println(Arrays.toString(sm.getCards()));
+// System.out.println("");
+// sm.cutCards(1);
+// System.out.println(Arrays.toString(sm.getCards()));
+// System.out.println("");
+// sm.shuffle(1);
+// System.out.println(Arrays.toString(sm.getCards()));
+// System.out.println("");
+// sm.midToTop(1);
+// System.out.println(Arrays.toString(sm.getCards()));
+// System.out.println("");
+// sm.cutCards(1);
+// System.out.println(Arrays.toString(sm.getCards()));
+// System.out.println("");
+// sm.midToTop(1);
+// System.out.println(Arrays.toString(sm.getCards()));
+// System.out.println("");
+// sm.cutCards(1);
+// System.out.println(Arrays.toString(sm.getCards()));
+// System.out.println("");
+// sm.shuffle(1);
+// System.out.println(Arrays.toString(sm.getCards()));
