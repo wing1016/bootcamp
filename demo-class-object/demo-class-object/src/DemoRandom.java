@@ -29,7 +29,7 @@ public class DemoRandom {
   }
 
   public   int sum2(int x, int y){
-    return x + y;  //  no need to make instance method like this. it is just a simple tools
+    return x + y;  //  no need to make instance method like this. it is just a simple   tools
   }
 
   public void setBaseSalary(int baseSalary){

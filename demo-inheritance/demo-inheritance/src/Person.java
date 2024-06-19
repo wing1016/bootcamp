@@ -1,7 +1,7 @@
 // 18 Jun 24
 
 //Abstract
-public class Person {
+public abstract class Person {
   private String name;
   private int age;
 
@@ -19,8 +19,16 @@ public class Person {
     return this.age;
   }
 
+  public void setAge(int a){
+    this.age = a;
+  }
+
+
+  //abstract class cannot new a object
   public static void main(String[] args) {
-    Person p = new Person("Wing", 30);
+
+    //abstract class cannot create objectof its class
+    Person p = new Person("Wing", 30);  // why we need to new a person. why we need to new a shape.
 
     //Student.class in public
     //Student.class constructor is public

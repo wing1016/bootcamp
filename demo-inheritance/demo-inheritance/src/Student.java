@@ -28,6 +28,12 @@ public class Student extends Person {
         return this.studentId;
     }
 
+    //no need this setter, studen can directly call persion setAge
+    public void setAge(int a){
+        //2. call parent object setAge() method
+        super.setAge(a);
+    }
+
     // public int getAge() {
     // return this.age;
     // }
