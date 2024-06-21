@@ -32,7 +32,7 @@ public abstract class Shape {
   public static double totalArea(Shape[] shapes) {
     BigDecimal bd = BigDecimal.valueOf(0.0d);
     for (Shape s : shapes) {
-    //  bd = bd.add(BigDecimal.valueOf(s.area())).doubleValue(); // why why whyh
+    //  bd = bd.add(BigDecimal.valueOf(s.area())).doubleValue(); // why why why
       bd = bd.add(BigDecimal.valueOf(s.area()));
     }
     return bd.doubleValue();
@@ -46,7 +46,9 @@ public abstract class Shape {
     
     //extra example
     StringBuilder sb = new StringBuilder("hello");
-    sb.append(" world");
+
+    sb.append(" world");    //in java world : you dont have to assign the return object to a reference
+
     // sb = sb.append(" world");
     System.out.println(sb);
     
