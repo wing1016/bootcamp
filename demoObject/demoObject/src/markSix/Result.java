@@ -23,7 +23,7 @@ public class Result {
     }
     Result result = (Result) obj; // cast to Result because i want to use method of Rresult object
 
-    return Objects.equals(this.date, result.getDate()); // no need to compare balls becasue only 1 marksix for 1 day 
+    return Objects.equals(this.date, result.getDate()); // no need to compare balls becasue only 1 marksix for 1 day
 
   }
 

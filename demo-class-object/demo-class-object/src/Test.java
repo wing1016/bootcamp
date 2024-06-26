@@ -2,32 +2,26 @@ import java.util.Arrays;
 
 public class Test {
 
+    public int countOperations(int num1, int num2) {
+        int c = 0;
+        while (num1 != 0 && num2 != 0) {
+            if (num1 - num2 >= 0) {
+                num1 = num1 - num2;
+                // c++;
+            } else {
+                num2 = num2 - num1;
+                // c++;
+            }
+            c++;
+        }
+        return c;
+    }
 
-   public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+    public static void main(String[] args) {
+        Test t = new Test();
+        System.out.println(t.countOperations(2, 3));
 
-      Boolean bo = false;
-      String w1 = "";
-      String w2 = "";
-      for (int i = 0; i < word1.length; i++) {
-          w1 += word1[i];
-          w2 += word2[i];
-
-          System.out.println(word2[4]);
-      }
-      System.out.println(w1);
-      System.out.println(w2);
-      if (w1.equals(w2)) {
-          bo = true;
-      }
-
-      return bo;
-  }
-   public static void main(String[] args) {
-      Test t = new Test();
-      System.out.println();
-      System.out.println(t.arrayStringsAreEqual(new String[] {"a", "cb"},
-            new String[] {"ab", "c"}));
-   }
+    }
 
 }
 
