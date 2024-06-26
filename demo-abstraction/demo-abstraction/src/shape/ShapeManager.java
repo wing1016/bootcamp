@@ -28,7 +28,7 @@ public class ShapeManager {
     System.out.println(c.area());
     System.out.println(sm.isTooBig());
 
-    sm.setShape(Square(4.0));
-    System.out.println(sm.isTooBig());
+    sm.setShape(new Square(4.0));   //check here with sir version !!
+    System.out.println("is too big :" + sm.isTooBig());
   }
 }
