@@ -28,7 +28,7 @@ public abstract class Person {
   public static void main(String[] args) {
 
     //abstract class cannot create objectof its class
-    Person p = new Person("Wing", 30);  // why we need to new a person. why we need to new a shape.
+    // Person p = new Person("Wing", 30);  // why we need to new a person. why we need to new a shape.
 
     //Student.class in public
     //Student.class constructor is public

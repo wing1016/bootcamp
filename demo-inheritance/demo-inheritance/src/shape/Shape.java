@@ -43,6 +43,8 @@ public abstract class Shape {
     System.out.println(Shape.circleAreaV(3.0d));
     Shape[] shapes = new Shape[] {new Circle(3.0), new Square(4.0d), new Circle(10.0)};
     System.out.println(Shape.totalArea(shapes));    
+
+    Shape[] sh = new Shape[1];
     
     //extra example
     StringBuilder sb = new StringBuilder("hello");

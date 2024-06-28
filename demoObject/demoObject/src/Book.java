@@ -70,7 +70,7 @@ public class Book extends Object {
     System.out.println(b1.equals(new Cat())); // false
 
     // if both ojects are locate at difference address, equals must return "false"
-    System.out.println(b1.equals(b2)); // i overrided the metho equals
+    System.out.println(b1.equals(b2)); // i overrided the method equals
     System.out.println(b1.equals(b3));
 
     String str = "abc";
@@ -108,7 +108,8 @@ public class Book extends Object {
     Object s3 = new Object();
     Object s4 = new Object();
     System.out.println(s3.equals(s4)); // false ( Runtime: Object.equals() )
-
+    System.out.println(s3.toString());
+    System.out.println(s4.toString());
 
   }
 }

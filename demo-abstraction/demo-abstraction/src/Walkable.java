@@ -7,7 +7,7 @@ public interface Walkable {
   //2. all methods are "public abstract" implicitly
   // no need to write " abstract void walk() "
   //3. you can still declared public static final, all variable is public here
-  //4. A class can implement more than 1, interface, but a class can only exntend 1 
+  //4. A class can implement more than 1 interface, but a class can only exntend 1 
     // abstract class
 
 

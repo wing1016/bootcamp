@@ -12,11 +12,11 @@ public class Ball {
     return this.number;
   }
 
-  public Ball(){
+  public Ball() {
 
   }
 
-  public Ball(int n){
+  public Ball(int n) {
     this.number = n;
   }
 
@@ -33,7 +33,7 @@ public class Ball {
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     return " ball number : " + this.number;
   }
 
@@ -45,23 +45,23 @@ public class Ball {
     byte b2 = (byte) i1; // i1 type is int, we have to convert the value by (cast)
 
     Ball b3 = new Ball();
-   
+
 
     int[] arr = new int[3];
-System.out.println(Arrays.toString(arr));
+    System.out.println(Arrays.toString(arr));
 
     int[] arr2 = new int[3];
     System.out.println(Arrays.toString(arr2));
-    System.out.println(arr.equals(arr2));  //(false) equals method of int is not yet override
+    System.out.println(arr.equals(arr2)); // (false) equals method of int is not yet override
     System.out.println(Arrays.equals(arr, arr2)); // (true)
 
     Object bb = new Ball(48);
-   // bb.getNumber(); // Oject dont have getNumber method
+    // bb.getNumber(); // Oject dont have getNumber method
 
-   System.out.println( bb.getClass());  // > class markSix.Ball
+    System.out.println(bb.getClass()); // > class markSix.Ball
 
-   Class<?> clazz = bb.getClass();
-    System.out.println(clazz);    //class markSix.Ball
+    Class<?> clazz = bb.getClass();
+    System.out.println(clazz); // class markSix.Ball
 
     System.out.println(bb instanceof Ball);
 

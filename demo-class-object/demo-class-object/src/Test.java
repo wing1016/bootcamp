@@ -2,25 +2,26 @@ import java.util.Arrays;
 
 public class Test {
 
-    public int countOperations(int num1, int num2) {
-        int c = 0;
-        while (num1 != 0 && num2 != 0) {
-            if (num1 - num2 >= 0) {
-                num1 = num1 - num2;
-                // c++;
-            } else {
-                num2 = num2 - num1;
-                // c++;
+
+    public int percentageLetter(String s, char letter) {
+
+        StringBuilder sb = new StringBuilder(s);
+        int t = 0;
+        for (int i = 0; i < sb.length(); i++) {
+            if (sb.charAt(i) == letter) {
+                t++;
             }
-            c++;
+            System.out.println(sb.charAt(i));
         }
-        return c;
+
+        return 100*t/sb.length();
     }
 
     public static void main(String[] args) {
-        Test t = new Test();
-        System.out.println(t.countOperations(2, 3));
 
+        Test t = new Test();
+        
+        System.out.println(t.percentageLetter("foobar", 'o'));
     }
 
 }
@@ -72,4 +73,21 @@ public class Test {
 // // System.out.println(i);
 // num = num.substring(0, i+1);
 // return num;
+// }
+
+
+
+// public int countOperations(int num1, int num2) {
+// int c = 0;
+// while (num1 != 0 && num2 != 0) {
+// if (num1 - num2 >= 0) {
+// num1 = num1 - num2;
+// // c++;
+// } else {
+// num2 = num2 - num1;
+// // c++;
+// }
+// c++;
+// }
+// return c;
 // }
