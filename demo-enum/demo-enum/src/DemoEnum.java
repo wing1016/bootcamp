@@ -29,8 +29,9 @@ public class DemoEnum {
     //North, south, west, east
 
     Direction d =  Direction.EAST;   
-    if(d == Direction.WEST ){
-      
+    if(d == Direction.EAST ){
+      d =  Direction.WEST;
+      System.out.println(Direction.WEST);
     }
 
   }

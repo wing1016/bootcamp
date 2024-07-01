@@ -2,26 +2,38 @@ import java.util.Arrays;
 
 public class Test {
 
-
-    public int percentageLetter(String s, char letter) {
-
-        StringBuilder sb = new StringBuilder(s);
-        int t = 0;
-        for (int i = 0; i < sb.length(); i++) {
-            if (sb.charAt(i) == letter) {
-                t++;
-            }
-            System.out.println(sb.charAt(i));
+    public boolean isValid(String word) {
+        char c = ' ';
+        int itg = 0;
+        word = word.toLowerCase();
+        if (word.length() < 3) {
+            return false;
         }
 
-        return 100*t/sb.length();
+        if (word.indexOf('a') != -1 || word.indexOf('e') != -1 || word.indexOf('i') != -1 || word.indexOf('o') != -1
+                || word.indexOf('u') != -1) {
+            System.out.println("VV");
+        }
+
+        for (int i = 0; i < word.length(); i++) {
+            c = word.charAt(i);
+            itg = (int) c;
+            if (!((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))) {
+                return false;
+            }
+        }
+
+        return true;
+
     }
 
     public static void main(String[] args) {
+        String s = "acbfgf";
+        char c = ' ';
 
-        Test t = new Test();
-        
-        System.out.println(t.percentageLetter("foobar", 'o'));
+        s = s.toLowerCase();
+        System.out.println(s);
+        System.out.println(s.indexOf("s"));
     }
 
 }
@@ -90,4 +102,33 @@ public class Test {
 // c++;
 // }
 // return c;
+// }
+
+
+
+// public char repeatedCharacter(String s) {
+// int count = 2;
+// int place = s.length();
+// char letter = '-';
+// for (int i = 0; i < s.length(); i++) {
+// count = 2;
+// for (int j = 0; j < s.length() ; j++) {
+// System.out.println(s.charAt(i) + " : " + s.charAt(j));
+// if (s.charAt(i) == s.charAt(j)) {
+// System.out.println(" count : " + count);
+// count--;
+// }
+// if (count == 0 && j < place) {
+// place = j;
+// System.out
+// .println("result : " + count + ", j :" + j + " ");
+// letter = s.charAt(i);
+// System.out.println(letter);
+// // break;
+// }
+// }
+
+// }
+// return letter;
+
 // }
