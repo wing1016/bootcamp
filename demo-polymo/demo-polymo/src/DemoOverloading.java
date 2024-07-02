@@ -65,6 +65,8 @@ public class DemoOverloading {
     String b = String.valueOf(2.0d);
     char[] arr = new char[] {'c', 'b', 'A'};
     System.out.println(String.valueOf(arr));
+    System.out.println(a);
+    System.out.println(b + "xyz");
 
     // Example 2
     System.out.println(sum(1, 3));
