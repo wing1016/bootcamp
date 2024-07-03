@@ -4,21 +4,25 @@ import java.util.Random;
 
 public class Deck {
 
-  private static String[] suits =
-      new String[] {"DIAMOND", "CLUB", "HEART", "SPADE"};
+  // private static final String[] suits =
+  //     new String[] {"DIAMOND", "CLUB", "HEART", "SPADE"};
 
-  private static String[] ranks = new String[] {"1", "2", "3", "4", "5", "6",
-      "7", "8", "9", "10", "11", "12", "13"};
+  // private static final String[] ranks = new String[] {"1", "2", "3", "4", "5", "6",
+  //     "7", "8", "9", "10", "11", "12", "13"};
+
+  private Suit suit;
+  private Rank rank;
+
   // player, deck, card,
 
   private Card[] cards;
-  public static int length = suits.length * ranks.length;
+  public static int length = Suit.values().length * Rank.values().length;
 
   public Deck() {
-    this.cards = new Card[suits.length * ranks.length];
+    this.cards = new Card[length];
     int i = 0;
-    for (String suit : suits) {
-      for (String rank : ranks) {
+    for (Suit suit : Suit.values()) {
+      for (Rank rank : Rank.values()) {
         // this.cards(suit, rank);
         this.cards[i++] = new Card(suit, rank);
       }

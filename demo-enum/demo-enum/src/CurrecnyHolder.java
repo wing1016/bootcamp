@@ -16,9 +16,15 @@ public class CurrecnyHolder {
   }
 
   public static boolean isHKD(CurrecnyHolder ch) {
-    return "HKD".equals(ch.currency); // check with #sir version
+ //   return "HKD".equals(ch.currency); // check with #sir version (wing vers.)
+    return "HKD".equals(ch.getCurrency()); // sir version 
   }
 
+  public static boolean isHKD(String currency) {
+    return "HKD".equals(currency);
+  }
+
+   // Solution: use enum as parameters (type-safe: compiler time ensure/check the scope of values)
   public static boolean isHKD2(Currency c) {
     return "HKD".equals(c.name()); // check with #sir version
   }
@@ -41,7 +47,7 @@ public class CurrecnyHolder {
     // enum.class defined a finite number of values, so that complier can validate the parameter
     System.out.println(isHKD2(Currency.USD));
 
-
+     // valueOf(), String -> ENUM (turn String to enum)
   }
 
 }

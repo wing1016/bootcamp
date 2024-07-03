@@ -2,44 +2,51 @@ import java.util.Arrays;
 
 public class Test {
 
-    public boolean isValid(String word) {
-        char c = ' ';
-        int itg = 0;
-        word = word.toLowerCase();
-        if (word.length() < 3) {
-            return false;
-        }
+    public String toGoatLatin(String sentence) {
+        String vw = "aeiouAEIOU";
+        String[] s = sentence.split(" ");
+        String newS = "";
 
-        if (word.indexOf('a') != -1 || word.indexOf('e') != -1 || word.indexOf('i') != -1 || word.indexOf('o') != -1
-                || word.indexOf('u') != -1) {
-            System.out.println("VV");
-        }
+        for (int i = 0; i < s.length; i++) {
+            String nstr = "";
+            char ch;
 
-        for (int i = 0; i < word.length(); i++) {
-            c = word.charAt(i);
-            itg = (int) c;
-            if (!((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))) {
-                return false;
+            if (vw.indexOf(s[i].charAt(0)) == -1) {
+                // ch = s[i].charAt(0);
+                // nstr = s[i].substring(1);
+                nstr = s[i].substring(1) + s[i].charAt(0);
+            } else {
+                nstr = s[i];
             }
+            nstr = nstr + "ma";
+            for (int k = 0; k <= i; k++) {
+                nstr = nstr + "a";
+            }
+            newS = newS + nstr + " ";
+            // System.out.println(nstr);
         }
 
-        return true;
-
+        return newS.trim();
     }
 
     public static void main(String[] args) {
-        String s = "acbfgf";
-        char c = ' ';
 
-        s = s.toLowerCase();
-        System.out.println(s);
-        System.out.println(s.indexOf("s"));
+        String x = "The quick brown fox jumped over the lazy dog";
+        String[] a = x.split(" ");
+
+        Test t = new Test();
+
+
+        System.out.println(Arrays.toString(a));
+        System.out.println(t.toGoatLatin(x));
+
+
     }
 
 }
 
-
-
+// "The quick brown fox jumped over the lazy dog"
+// I speak Goat Latin
 // public String removeTrailingZeros(String num) {
 
 // for (int i = 0; num.contains("0")&& num.lastIndexOf("0") == num.length() - 1; i++) {

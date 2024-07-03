@@ -4,35 +4,51 @@ import java.util.Arrays;
 
 public class Card {
 
+  // private String suit;
+  // private String rank;
 
-  private String suit;
-  private String rank;
+  private Suit suit;
+  private Rank rank;
 
-  public Card(String s, String r) {
+  public Card(Suit suit2, Rank rank2) {
+    this.suit = suit2;
+    this.rank = rank2;
+  }
+
+  public void setSuit(Suit s) {
     this.suit = s;
+  }
+
+  public void setRank(Rank r) {
     this.rank = r;
   }
 
-  public void setSuit(String s) {
-    this.suit = s;
-  }
-
-  public void setRank(String r) {
-    this.rank = r;
-  }
-
-  public String getSuit() {
+  public Suit getSuit() {
     return this.suit;
   }
 
-  public String getRank() {
+  public Rank getRank() {
     return this.rank;
+  }
+
+  //do 
+  public boolean isHigerThan(Card c){
+    //Compare rank first, than suit
+
+    // Concentrate to write an "OR" relationship
+    if (this.rank.isHigerThan(c.getRank())) {     // early return -CODING STYLE  early return exceptional case, only base case left ( easy to think )
+        return true;  // exit the method
+    }  
+    if (this.rank == c.getRank() && this.suit.isHigerThan(c.suit)) {  // early return CODING STYLE
+      return true;    //exit the method
+    }
+    //All other case    
+    return false;
   }
 
   public String toString() {
     return " " + this.suit + " : " + this.rank + " ";
   }
-
 
   public static void main(String[] args) {
     Deck deck = new Deck();
@@ -47,16 +63,26 @@ public class Card {
     System.out.println(Arrays.toString(sm.getCards()));
     System.out.println("");
 
-   
+
     sm.cutCards(1);
     System.out.println(Arrays.toString(sm.getCards()));
-    sm.shuffle(1); sm.midToTop(1);  sm.cutCards(1);sm.midToTop(1);     sm.shuffle(1); sm.midToTop(1);  sm.cutCards(1);sm.midToTop(1); 
-    sm.shuffle(1); sm.midToTop(1);  sm.cutCards(1);sm.midToTop(1);
+    sm.shuffle(1);
+    sm.midToTop(1);
+    sm.cutCards(1);
+    sm.midToTop(1);
+    sm.shuffle(1);
+    sm.midToTop(1);
+    sm.cutCards(1);
+    sm.midToTop(1);
+    sm.shuffle(1);
+    sm.midToTop(1);
+    sm.cutCards(1);
+    sm.midToTop(1);
     System.out.println(Arrays.toString(sm.getCards()));
 
 
     // for (Card card : sm.getCards()) {
-    //   System.out.println(card);
+    // System.out.println(card);
     // }
 
 
