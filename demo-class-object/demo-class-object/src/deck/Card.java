@@ -39,7 +39,7 @@ public class Card {
     if (this.rank.isHigerThan(c.getRank())) { // early return -CODING STYLE early return exceptional case, only base case left ( easy to think )
       return true; // exit the method
     }
-    if (this.rank == c.getRank() && this.suit.isHigerThan(c.suit)) { // early return CODING STYLE
+    if (this.rank == c.getRank() && this.suit.isHigherThan(c.suit)) { // early return CODING STYLE
       return true; // exit the method
     }
     // All other case
@@ -63,22 +63,24 @@ public class Card {
     System.out.println(Arrays.toString(sm.getCards()));
     System.out.println("");
 
+    sm.cutCards(1);
+    // System.out.println(Arrays.toString(sm.getCards()));
+    sm.shuffle(1);
+    sm.midToTop(1);
+    sm.cutCards(1);
+    sm.midToTop(1);
+    sm.shuffle(1);
+    sm.midToTop(1);
+    sm.cutCards(1);
+    sm.midToTop(1);
+    sm.shuffle(1);
+    sm.midToTop(1);
+    sm.cutCards(1);
+    sm.midToTop(1);
+    // System.out.println(Arrays.toString(sm.getCards()));
 
-    sm.cutCards(1);
-    System.out.println(Arrays.toString(sm.getCards()));
-    sm.shuffle(1);
-    sm.midToTop(1);
-    sm.cutCards(1);
-    sm.midToTop(1);
-    sm.shuffle(1);
-    sm.midToTop(1);
-    sm.cutCards(1);
-    sm.midToTop(1);
-    sm.shuffle(1);
-    sm.midToTop(1);
-    sm.cutCards(1);
-    sm.midToTop(1);
-    System.out.println(Arrays.toString(sm.getCards()));
+    System.out.println(new Card(Suit.CLUB, Rank.QUEEN).isHigerThan(new Card(Suit.HEART, Rank.NINE)));
+
 
 
     //Why sir dont like "else" & "else if" .
