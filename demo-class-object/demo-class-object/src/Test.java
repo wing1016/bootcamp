@@ -2,37 +2,22 @@ import java.util.Arrays;
 
 public class Test {
 
+    public String capitalizeTitle(String title) {
+        String[] arr = title.split(" ");
+        String tmp = "";
+        for (int i = 0; i < arr.length; i++) {
 
+            arr[i] = arr[i].toLowerCase();
+            if (arr[i].length() > 2) {
+                char c = arr[i].charAt(0);
 
-    public String largestOddNumber(String num) {
-
-        Integer max = 0;
-        String[] arr = new String[num.length()];
-        Character c;
-        String odd = "13579";
-        // for (int i = 0; i < arr.length; i++) {
-        for (int i = arr.length - 1; i >= 0; i--) {
-
-            c = num.charAt(i);
-            System.out.println(c + 2);
-            System.out.println((num.charAt(i)-'0')+2);
-            if (Integer.parseInt(c.toString()) % 2 == 0) {
-                continue;
+                arr[i] = arr[i].substring(0, 1).toUpperCase()
+                        + arr[i].substring(1);
             }
-          
-            // System.out.println(  num.substring(0, i+1));
-            return num.substring(0, i+1);
-            
-            // System.out.println(
-            //         "i : " + i + " isOdd : " + odd.indexOf(c.toString()));
-            // if (Integer.parseInt(c.toString()) > max) {
-            //     max = Integer.parseInt(c.toString());
-            // }
-
-            // System.out.println(Integer.parseInt(c.toString()));
+            System.out.println(title);
+            tmp = tmp + arr[i];
         }
-
-        return "";
+        return String.join(" ", arr);
     }
 
 
@@ -40,11 +25,24 @@ public class Test {
     public static void main(String[] args) {
 
         Test t = new Test();
-        
-        System.out.println(t.largestOddNumber("132465766688"));
-        // System.out.println(odd.indexOf("5"));
+        System.out.println(t.capitalizeTitle("First leTTeR of EACH Word"));
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

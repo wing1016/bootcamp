@@ -31,6 +31,14 @@ public class Card {
     return this.rank;
   }
 
+  //Wing try
+  public boolean isJoker(){
+    if (this.getRank() == null && this.getSuit() == null) {
+      return true;
+    }
+    return false;
+  }
+
   // do
   public boolean isHigerThan(Card c) {
     // Compare rank first, than suit
@@ -81,8 +89,6 @@ public class Card {
 
     System.out.println(new Card(Suit.CLUB, Rank.QUEEN).isHigerThan(new Card(Suit.HEART, Rank.NINE)));
 
-
-
     //Why sir dont like "else" & "else if" .
     //else if make condition looks more complicated
     //hard to read
@@ -100,6 +106,22 @@ public class Card {
 
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // sm.midToTop(1);
 // System.out.println(Arrays.toString(sm.getCards()));
 // System.out.println("");
