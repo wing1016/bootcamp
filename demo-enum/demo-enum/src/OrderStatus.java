@@ -16,7 +16,7 @@ public enum OrderStatus {
   public OrderStatus next() {
     for (OrderStatus os : OrderStatus.values()) {
       if (this.seq + 1 == os.getSeq()) {    //here no need this.getSeq. bcos myself attribute
-        return os;       // #sir
+        return os;       // #sir#
       }
     }
     return null;

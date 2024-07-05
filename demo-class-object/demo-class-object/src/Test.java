@@ -2,48 +2,51 @@ import java.util.Arrays;
 
 public class Test {
 
-    public String toGoatLatin(String sentence) {
-        String vw = "aeiouAEIOU";
-        String[] s = sentence.split(" ");
-        String newS = "";
 
-        for (int i = 0; i < s.length; i++) {
-            String nstr = "";
-            char ch;
 
-            if (vw.indexOf(s[i].charAt(0)) == -1) {
-                // ch = s[i].charAt(0);
-                // nstr = s[i].substring(1);
-                nstr = s[i].substring(1) + s[i].charAt(0);
-            } else {
-                nstr = s[i];
+    public String largestOddNumber(String num) {
+
+        Integer max = 0;
+        String[] arr = new String[num.length()];
+        Character c;
+        String odd = "13579";
+        // for (int i = 0; i < arr.length; i++) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+
+            c = num.charAt(i);
+            System.out.println(c + 2);
+            System.out.println((num.charAt(i)-'0')+2);
+            if (Integer.parseInt(c.toString()) % 2 == 0) {
+                continue;
             }
-            nstr = nstr + "ma";
-            for (int k = 0; k <= i; k++) {
-                nstr = nstr + "a";
-            }
-            newS = newS + nstr + " ";
-            // System.out.println(nstr);
+          
+            // System.out.println(  num.substring(0, i+1));
+            return num.substring(0, i+1);
+            
+            // System.out.println(
+            //         "i : " + i + " isOdd : " + odd.indexOf(c.toString()));
+            // if (Integer.parseInt(c.toString()) > max) {
+            //     max = Integer.parseInt(c.toString());
+            // }
+
+            // System.out.println(Integer.parseInt(c.toString()));
         }
 
-        return newS.trim();
+        return "";
     }
+
+
 
     public static void main(String[] args) {
 
-        String x = "The quick brown fox jumped over the lazy dog";
-        String[] a = x.split(" ");
-
         Test t = new Test();
-
-
-        System.out.println(Arrays.toString(a));
-        System.out.println(t.toGoatLatin(x));
-
-
+        
+        System.out.println(t.largestOddNumber("132465766688"));
+        // System.out.println(odd.indexOf("5"));
     }
-
 }
+
+
 
 // "The quick brown fox jumped over the lazy dog"
 // I speak Goat Latin

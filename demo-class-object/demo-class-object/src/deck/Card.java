@@ -31,18 +31,18 @@ public class Card {
     return this.rank;
   }
 
-  //do 
-  public boolean isHigerThan(Card c){
-    //Compare rank first, than suit
+  // do
+  public boolean isHigerThan(Card c) {
+    // Compare rank first, than suit
 
     // Concentrate to write an "OR" relationship
-    if (this.rank.isHigerThan(c.getRank())) {     // early return -CODING STYLE  early return exceptional case, only base case left ( easy to think )
-        return true;  // exit the method
-    }  
-    if (this.rank == c.getRank() && this.suit.isHigerThan(c.suit)) {  // early return CODING STYLE
-      return true;    //exit the method
+    if (this.rank.isHigerThan(c.getRank())) { // early return -CODING STYLE early return exceptional case, only base case left ( easy to think )
+      return true; // exit the method
     }
-    //All other case    
+    if (this.rank == c.getRank() && this.suit.isHigerThan(c.suit)) { // early return CODING STYLE
+      return true; // exit the method
+    }
+    // All other case
     return false;
   }
 
@@ -80,6 +80,16 @@ public class Card {
     sm.midToTop(1);
     System.out.println(Arrays.toString(sm.getCards()));
 
+
+    //Why sir dont like "else" & "else if" .
+    //else if make condition looks more complicated
+    //hard to read
+    int x = 2;
+    if (x > 3) { // x = 3
+
+    } else if (x > 4 || x > 4 && x < 10) {
+
+    }
 
     // for (Card card : sm.getCards()) {
     // System.out.println(card);
