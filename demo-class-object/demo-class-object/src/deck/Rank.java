@@ -20,6 +20,10 @@ public enum Rank {
     // return true;
     // return false;
   }
+
+  public boolean isSameRank(Rank r){
+    return this.rank == r.rank;
+  }
   // card.java pls check #sir# version
 }
 

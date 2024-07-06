@@ -32,7 +32,7 @@ public class Deck {
 
   public static void test(){
     Deck d = new Deck();
-    this.getCards();  // << cannot use "this" in static 
+    // this.getCards();  // << cannot use "this" in static 
   }
 
   public Card[] getCards() {

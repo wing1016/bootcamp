@@ -31,8 +31,8 @@ public class Card {
     return this.rank;
   }
 
-  //Wing try
-  public boolean isJoker(){
+  // Wing try
+  public boolean isJoker() {
     if (this.getRank() == null && this.getSuit() == null) {
       return true;
     }
@@ -62,36 +62,31 @@ public class Card {
     Deck deck = new Deck();
     Card[] cards = deck.getCards();
     System.out.println("= = =");
-    // for (Card card : cards) {
-    // System.out.println(card);
-    // }
 
-    // deck.shuffle(10234);
     ShuffleManager sm = new ShuffleManager(cards);
+    // System.out.println(Arrays.toString(sm.getCards()));
+    sm.randomDeck();
+    // sm.cutCards(1);
+    // sm.shuffle(1);
+    // sm.midToTop(1);
+    // sm.cutCards(1);
+    // sm.midToTop(1);
+    // sm.shuffle(1);
+    // sm.midToTop(1);
+    // sm.cutCards(1);
+    // sm.midToTop(1);
+    // sm.shuffle(1);
+    // sm.midToTop(1);
+    // sm.cutCards(1);
+    // sm.midToTop(1);
     System.out.println(Arrays.toString(sm.getCards()));
-    System.out.println("");
 
-    sm.cutCards(1);
-    // System.out.println(Arrays.toString(sm.getCards()));
-    sm.shuffle(1);
-    sm.midToTop(1);
-    sm.cutCards(1);
-    sm.midToTop(1);
-    sm.shuffle(1);
-    sm.midToTop(1);
-    sm.cutCards(1);
-    sm.midToTop(1);
-    sm.shuffle(1);
-    sm.midToTop(1);
-    sm.cutCards(1);
-    sm.midToTop(1);
-    // System.out.println(Arrays.toString(sm.getCards()));
+    System.out.println(new Card(Suit.CLUB, Rank.QUEEN)
+        .isHigerThan(new Card(Suit.HEART, Rank.NINE)));
 
-    System.out.println(new Card(Suit.CLUB, Rank.QUEEN).isHigerThan(new Card(Suit.HEART, Rank.NINE)));
-
-    //Why sir dont like "else" & "else if" .
-    //else if make condition looks more complicated
-    //hard to read
+    // Why sir dont like "else" & "else if" .
+    // else if make condition looks more complicated
+    // hard to read
     int x = 2;
     if (x > 3) { // x = 3
 
@@ -99,26 +94,10 @@ public class Card {
 
     }
 
-    // for (Card card : sm.getCards()) {
-    // System.out.println(card);
-    // }
 
 
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
