@@ -4,15 +4,14 @@ import java.util.Arrays;
 
 public class Card {
 
-  // private String suit;
-  // private String rank;
+  // private String suit; // private String rank;
 
   private Suit suit;
   private Rank rank;
 
-  public Card(Suit suit2, Rank rank2) {
-    this.suit = suit2;
-    this.rank = rank2;
+  public Card(Suit suit, Rank rank) {
+    this.suit = suit;
+    this.rank = rank;
   }
 
   public void setSuit(Suit s) {
@@ -66,61 +65,35 @@ public class Card {
     ShuffleManager sm = new ShuffleManager(cards);
     // System.out.println(Arrays.toString(sm.getCards()));
     sm.randomDeck();
-    // sm.cutCards(1);
-    // sm.shuffle(1);
-    // sm.midToTop(1);
-    // sm.cutCards(1);
-    // sm.midToTop(1);
-    // sm.shuffle(1);
-    // sm.midToTop(1);
-    // sm.cutCards(1);
-    // sm.midToTop(1);
-    // sm.shuffle(1);
-    // sm.midToTop(1);
-    // sm.cutCards(1);
-    // sm.midToTop(1);
-    System.out.println(Arrays.toString(sm.getCards()));
 
-    System.out.println(new Card(Suit.CLUB, Rank.QUEEN)
-        .isHigerThan(new Card(Suit.HEART, Rank.NINE)));
+    // System.out.println(Arrays.toString(sm.getCards()));
+
+    // for (Card card : sm.getCards()) {
+    // System.out.println(card);
+    // }
+
+    System.out.println(new Card(Suit.CLUB, Rank.ACE)
+        .isHigerThan(new Card(Suit.HEART, Rank.QUEEN)));
+
+    System.out.println(new Card(Suit.CLUB, Rank.TWO)
+        .isHigerThan(new Card(Suit.HEART, Rank.THREE)));
+
+    Rank.shiftValue();
+
+    System.out.println(new Card(Suit.CLUB, Rank.ACE)
+        .isHigerThan(new Card(Suit.HEART, Rank.QUEEN)));
+
+
+    System.out.println(new Card(Suit.CLUB, Rank.TWO)
+        .isHigerThan(new Card(Suit.HEART, Rank.THREE)));
 
     // Why sir dont like "else" & "else if" .
     // else if make condition looks more complicated
     // hard to read
     int x = 2;
     if (x > 3) { // x = 3
-
     } else if (x > 4 || x > 4 && x < 10) {
-
     }
-
-
-
   }
 }
 
-
-
-// sm.midToTop(1);
-// System.out.println(Arrays.toString(sm.getCards()));
-// System.out.println("");
-// sm.cutCards(1);
-// System.out.println(Arrays.toString(sm.getCards()));
-// System.out.println("");
-// sm.shuffle(1);
-// System.out.println(Arrays.toString(sm.getCards()));
-// System.out.println("");
-// sm.midToTop(1);
-// System.out.println(Arrays.toString(sm.getCards()));
-// System.out.println("");
-// sm.cutCards(1);
-// System.out.println(Arrays.toString(sm.getCards()));
-// System.out.println("");
-// sm.midToTop(1);
-// System.out.println(Arrays.toString(sm.getCards()));
-// System.out.println("");
-// sm.cutCards(1);
-// System.out.println(Arrays.toString(sm.getCards()));
-// System.out.println("");
-// sm.shuffle(1);
-// System.out.println(Arrays.toString(sm.getCards()));

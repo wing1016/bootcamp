@@ -79,17 +79,17 @@ public class ShuffleManager {
 
   public void randomDeck() {
     this.shuffle();
-    this.midToTop(50);
+    this.midToTop(100);
     this.shuffle();
-    this.cutCards(50);
+    this.cutCards(100);
     this.shuffle();
-    this.midToTop(50);
+    this.midToTop(100);
     this.shuffle();
-    this.cutCards(50);
+    this.cutCards(100);
     this.shuffle();
-    this.midToTop(50);
+    this.midToTop(100);
     this.shuffle();
-    this.cutCards(50);
+    this.cutCards(100);
   }
 
 

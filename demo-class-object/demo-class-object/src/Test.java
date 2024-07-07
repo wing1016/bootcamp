@@ -1,51 +1,44 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Test {
 
-    public String capitalizeTitle(String title) {
-        String[] arr = title.split(" ");
-        String tmp = "";
-        for (int i = 0; i < arr.length; i++) {
+    public List<String> stringMatching(String[] words) {
+        List<String> ls = new ArrayList<String>();
 
-            arr[i] = arr[i].toLowerCase();
-            if (arr[i].length() > 2) {
-                char c = arr[i].charAt(0);
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words.length; j++) {
+                System.out.println(i + " : " + j);
+                if (i == j) {
+                    continue;
+                }
+                if (words[i].contains(words[j]) == true) {
 
-                arr[i] = arr[i].substring(0, 1).toUpperCase()
-                        + arr[i].substring(1);
+                    System.out.println(words[i].indexOf(words[j]));
+                    System.out.println(words[i] + " : " + words[j]);
+                    ls.add(words[i]);
+                    break;
+
+                }
+
             }
-            System.out.println(title);
-            tmp = tmp + arr[i];
         }
-        return String.join(" ", arr);
+        return ls;
     }
-
-
 
     public static void main(String[] args) {
 
         Test t = new Test();
-        System.out.println(t.capitalizeTitle("First leTTeR of EACH Word"));
+
+        System.out.println(t.stringMatching(
+                new String[] {"leetcoder", "leetcode", "od", "hamlet", "am"}));
 
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// "leetcode","et","code"
+// "leetcoder","leetcode","od","hamlet","am"
 // "The quick brown fox jumped over the lazy dog"
 // I speak Goat Latin
 // public String removeTrailingZeros(String num) {

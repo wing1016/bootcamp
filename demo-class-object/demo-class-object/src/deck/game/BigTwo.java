@@ -1,13 +1,13 @@
 package deck.game;
 
-import java.text.DecimalFormat;
+ 
 import java.util.Arrays;
 import deck.Card;
 import deck.Deck;
 import deck.Rank;
 import deck.Suit;
 
-public class Big2 {
+public class BigTwo {
 
   public static boolean isFourKind(Card[] cards) { // why static method, because we give some card
                                                    // to the method to check
@@ -21,7 +21,7 @@ public class Big2 {
     if (cards.length < 5) {
       return false;
     }
-    Big2.sortCards(cards);
+    BigTwo.sortCards(cards);
     for (int i = 0; i < cards.length - 1; i++) {
       if (cards[i].getRank().getRank() + 1 == cards[i + 1].getRank().getRank()
           && i == 3) {
@@ -35,7 +35,7 @@ public class Big2 {
     if (cards.length < 5) {
       return false;
     }
-    Big2.sortCards(cards);
+    BigTwo.sortCards(cards);
     if (cards[0].getRank().getRank() == cards[1].getRank().getRank()
         && (cards[2].getRank().getRank() == cards[3].getRank().getRank()
             && cards[3].getRank().getRank() == cards[4].getRank().getRank())) {
@@ -53,9 +53,9 @@ public class Big2 {
     if (cards.length < 5) {
       return false;
     }
-    Big2.sortCards(cards);
+    BigTwo.sortCards(cards);
     // System.out.println(Big2.isSameSuit(cards) + " : " + Big2.isStraight(cards));
-    if (Big2.isSameSuit(cards) && Big2.isStraight(cards)) {
+    if (BigTwo.isSameSuit(cards) && BigTwo.isStraight(cards)) {
       return true;
     }
     return false;
@@ -89,9 +89,9 @@ public class Big2 {
 
   public static void main(String[] args) {
     // Q1. how to handle 2 jokers in the deck if game dont need 2 jokers
-    Deck d = new Deck(); // Q2. 52 q rank q Rank. 2 is the highest
+    Deck d = new Deck(); // Q2.  52? rank? Rank.TWO is the highest in Big Two.
 
-    Card[] c = new Card[] {new Card(Suit.CLUB, Rank.SEVEN),
+    Card[] c = new Card[] {new Card(Suit.CLUB, Rank.FIVE),
         new Card(Suit.CLUB, Rank.FOUR), new Card(Suit.SPADE, Rank.ACE),
         new Card(Suit.HEART, Rank.THREE), new Card(Suit.DIAMOND, Rank.TWO)};
 
@@ -111,18 +111,18 @@ public class Big2 {
         new Card(Suit.CLUB, Rank.FOUR), new Card(Suit.CLUB, Rank.ACE)};
 
     System.out.println(Arrays.toString(c));
-    Big2.sortCards(c);
+    BigTwo.sortCards(c);
     System.out.println(Arrays.toString(c));
-    System.out.println(" Is straight ?  " + Big2.isStraight(c));
-    Big2.sortCards(c2);
+    System.out.println(" Is straight ?  " + BigTwo.isStraight(c));
+    BigTwo.sortCards(c2);
     System.out.println(Arrays.toString(c2));
-    System.out.println(" Is full house ?  " + Big2.isFulllHouse(c2));
+    System.out.println(" Is full house ?  " + BigTwo.isFulllHouse(c2));
 
     System.out.println(Arrays.toString(c3));
-    System.out.println(" Is same suit ?  " + Big2.isSameSuit(c3));
+    System.out.println(" Is same suit ?  " + BigTwo.isSameSuit(c3));
 
     System.out.println(Arrays.toString(c4));
-    System.out.println(" Is royal flush? " + Big2.isRoyalFlush(c4));
+    System.out.println(" Is royal flush? " + BigTwo.isRoyalFlush(c4));
     System.out.println(Arrays.toString(c4));
 
     // System.out.println( Arrays.toString(c));
