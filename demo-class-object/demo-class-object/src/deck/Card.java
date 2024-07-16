@@ -37,6 +37,7 @@ public class Card {
     }
     return false;
   }
+  
 
   // do
   public boolean isHigerThan(Card c) {

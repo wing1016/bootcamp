@@ -1,6 +1,6 @@
 package deck.game;
 
- 
+
 import java.util.Arrays;
 import deck.Card;
 import deck.Deck;
@@ -18,7 +18,7 @@ public class BigTwo {
   // what if we need to rewrite 4 method to instance method q
 
   public static boolean isStraight(Card[] cards) {
-    if (cards.length < 5) {
+    if (!BigTwo.chkCardLength(cards, 5)) {
       return false;
     }
     BigTwo.sortCards(cards);
@@ -32,7 +32,7 @@ public class BigTwo {
   }
 
   public static boolean isFulllHouse(Card[] cards) {
-    if (cards.length < 5) {
+    if (!BigTwo.chkCardLength(cards, 5)) {
       return false;
     }
     BigTwo.sortCards(cards);
@@ -50,7 +50,7 @@ public class BigTwo {
   }
 
   public static boolean isRoyalFlush(Card[] cards) {
-    if (cards.length < 5) {
+    if (!BigTwo.chkCardLength(cards, 5)) {
       return false;
     }
     BigTwo.sortCards(cards);
@@ -87,9 +87,16 @@ public class BigTwo {
     }
   }
 
+  public static boolean chkCardLength(Card[] cards, int i) {
+    if (cards.length == i) {
+      return true;
+    }
+    return false;
+  }
+
   public static void main(String[] args) {
     // Q1. how to handle 2 jokers in the deck if game dont need 2 jokers
-    Deck d = new Deck(); // Q2.  52? rank? Rank.TWO is the highest in Big Two.
+    Deck d = new Deck(); // Q2. 52? rank? Rank.TWO is the highest in Big Two.
 
     Card[] c = new Card[] {new Card(Suit.CLUB, Rank.FIVE),
         new Card(Suit.CLUB, Rank.FOUR), new Card(Suit.SPADE, Rank.ACE),
