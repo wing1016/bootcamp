@@ -37,7 +37,7 @@ public class Superman extends Person implements Flyable, PowerUp {
 
   //hashcode
   @Override
-  public int hashcode(){        // #sir version chk 
+  public int hashCode(){        // #sir version chk 
     return Objects.hash(super.getName());
   }
 
