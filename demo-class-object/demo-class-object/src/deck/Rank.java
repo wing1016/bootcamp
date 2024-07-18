@@ -16,12 +16,12 @@ public enum Rank {
     }
   }
 
-  public int getRank() {
+  public int getValue() {
     return this.value;
   }
 
   public boolean isHigerThan(Rank r) {
-    return this.value > r.getRank();
+    return this.value > r.getValue();
   }
 
   public boolean isSameRank(Rank r) {
