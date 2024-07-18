@@ -118,40 +118,41 @@ public class BigTwo {
         new Card(Suit.CLUB, Rank.FOUR), new Card(Suit.SPADE, Rank.ACE),
         new Card(Suit.HEART, Rank.THREE), new Card(Suit.DIAMOND, Rank.TWO)};
 
+ 
+    BigTwo.sortCards(c);
+    System.out.println(Arrays.toString(c));
+    System.out.println(" Is straight ?  " + BigTwo.isStraight(c));
+
     // full house?
     Card[] c2 = new Card[] {new Card(Suit.CLUB, Rank.FIVE),
         new Card(Suit.CLUB, Rank.THREE), new Card(Suit.SPADE, Rank.FIVE),
         new Card(Suit.HEART, Rank.THREE), new Card(Suit.DIAMOND, Rank.FIVE)};
+
+    BigTwo.sortCards(c2);
+    System.out.println(Arrays.toString(c2));
+    System.out.println(" Is full house ?  " + BigTwo.isFulllHouse(c2));
 
     // Same Suit?
     Card[] c3 = new Card[] {new Card(Suit.DIAMOND, Rank.TWO),
         new Card(Suit.DIAMOND, Rank.THREE), new Card(Suit.DIAMOND, Rank.FIVE),
         new Card(Suit.DIAMOND, Rank.FOUR), new Card(Suit.DIAMOND, Rank.ACE)};
 
+    System.out.println(Arrays.toString(c3));
+    System.out.println(" Is same suit ?  " + BigTwo.isSameSuit(c3));
+
     // royal flush?
     Card[] c4 = new Card[] {new Card(Suit.CLUB, Rank.TWO),
         new Card(Suit.CLUB, Rank.THREE), new Card(Suit.CLUB, Rank.FIVE),
         new Card(Suit.CLUB, Rank.FOUR), new Card(Suit.CLUB, Rank.ACE)};
 
-      //Four Kind?
-    Card[] c5 = new Card[] {new Card(Suit.CLUB, Rank.TWO),
-        new Card(Suit.HEART, Rank.TWO), new Card(Suit.CLUB, Rank.ACE),
-        new Card(Suit.DIAMOND, Rank.TWO), new Card(Suit.SPADE, Rank.TWO)};
-
-    System.out.println(Arrays.toString(c));
-    BigTwo.sortCards(c);
-    System.out.println(Arrays.toString(c));
-    System.out.println(" Is straight ?  " + BigTwo.isStraight(c));
-    BigTwo.sortCards(c2);
-    System.out.println(Arrays.toString(c2));
-    System.out.println(" Is full house ?  " + BigTwo.isFulllHouse(c2));
-
-    System.out.println(Arrays.toString(c3));
-    System.out.println(" Is same suit ?  " + BigTwo.isSameSuit(c3));
-
     BigTwo.sortCards(c4);
     System.out.println(Arrays.toString(c4));
     System.out.println(" Is royal flush? " + BigTwo.isRoyalFlush(c4));
+
+    // Four Kind?
+    Card[] c5 = new Card[] {new Card(Suit.CLUB, Rank.TWO),
+        new Card(Suit.HEART, Rank.TWO), new Card(Suit.CLUB, Rank.ACE),
+        new Card(Suit.DIAMOND, Rank.TWO), new Card(Suit.SPADE, Rank.TWO)};
 
     System.out.println(Arrays.toString(c5));
     System.out.println(" Is Four Kind? " + BigTwo.isFourKind(c5));
