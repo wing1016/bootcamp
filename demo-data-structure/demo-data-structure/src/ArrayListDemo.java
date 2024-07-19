@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class App {
+public class ArrayListDemo {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         Integer[] integers = new Integer[] {2, 10, -4};
@@ -43,37 +43,56 @@ public class App {
 
         System.out.println(integers2.contains(2)); // true
 
-        System.out.println(integers2.indexOf(-100));    //1
-        System.out.println(integers2.indexOf(-1000));   //-1
+        System.out.println(integers2.indexOf(-100)); // 1
+        System.out.println(integers2.indexOf(-1000)); // -1
 
         integers2.add(2);
-        System.out.println(integers2.indexOf(2));   //0
+        System.out.println(integers2.indexOf(2)); // 0
 
         System.out.println(integers2);
         System.out.println(integers2.lastIndexOf(2));
 
-        //subList
-        System.out.println(integers2.subList(1, 3));    // toindex is (n - 1)
+        // subList
+        System.out.println(integers2.subList(1, 3)); // toindex is (n - 1)
 
-        System.out.println(integers2); // integers2 is not changed.     //[2, -100, 2]
+        System.out.println(integers2); // integers2 is not changed. //[2, -100, 2]
 
-        //addAll()
+        // addAll()
         ArrayList<Integer> integers3 = new ArrayList<Integer>();
         System.out.println(integers3.isEmpty());
 
         integers3.addAll(integers2);
-        System.out.println( "integers3 :" + integers3);
+        System.out.println("integers3 :" + integers3);
 
-        ArrayList<String> strings = new ArrayList<>();  
-        // you can skip the type declaration inside <> when you create ArrayList 
+        ArrayList<String> strings = new ArrayList<>();
+        // you can skip the type declaration inside <> when you create ArrayList
         // by default it will equals to the left hand side <>
         strings.add("Hello");
         strings.add("abc");
         strings.add("world");
         System.out.println(strings);
-        strings.remove(1);  //
+        strings.remove(1); //
         System.out.println(strings);
-        strings.remove("Hello");        // remove will only remove the first match item ( if there is 2 "Hello" in the ArrayList )
+        strings.remove("Hello"); // remove will only remove the first match item ( if there is 2 "Hello" in the ArrayList )
         System.out.println(strings);
+
+        System.out.println(strings.get(0));  //world
+
+        // Question get customer age > 30 and name start with J
+        Customer[] c = new Customer[] {new Customer(40, "Mary"),
+                new Customer(31, "John"), new Customer(29, "Jason"),
+                new Customer(18, "Wing")};
+        ArrayList<Customer> arrC = new ArrayList<Customer>();
+
+        for (Customer cus : c) {
+            if ((cus.getAge() > 30 ) || cus.getName().charAt(0) == 'J'   ) {
+                arrC.add(cus);
+            }
+        }
+        System.out.println(arrC.toString());
+
+        // Loop
+
+
     }
 }

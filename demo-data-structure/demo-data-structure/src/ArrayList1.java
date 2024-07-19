@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArrayList1 {
@@ -25,9 +26,9 @@ public class ArrayList1 {
   public void remove(int i) {
     Integer[] arr = new Integer[this.integers.length - 1];
     int idx = 0;
-    for (Integer x : this.integers) {   // #sir version
+    for (Integer x : this.integers) { // #sir version
       System.out.println(x + " : " + idx);
-      if (idx != i) {        
+      if (idx != i) {
         arr[idx] = x;
       } else {
         continue;
@@ -51,7 +52,7 @@ public class ArrayList1 {
     return this.integers;
   }
 
-  public boolean isEmpty(){
+  public boolean isEmpty() {
     return this.size() == 0;
   }
 
@@ -77,6 +78,16 @@ public class ArrayList1 {
     list.remove(1);
     System.out.println(list);
 
-   
+    // Question 1 Remove string with length <= 3
+    String[] stringArr = new String[] {"anc", "a", null, "aaaa"};
+    ArrayList<String> result = new ArrayList<>();
+    // Loop
+    for (String s : stringArr) {
+      if (s != null && s.length() > 3) {
+        result.add(s);
+      }
+    }
+    System.out.println(result); // {"aaaa"}
+
   }
 }
