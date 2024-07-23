@@ -37,5 +37,30 @@ public class HashMapDemo {
     String oldValue = nameMap.remove(1010); // remove entry by Key
     System.out.println(nameMap);
     System.out.println(oldValue);   //Wing
+
+   
+    System.out.println( nameMap.containsKey(-45));
+    System.out.println( nameMap.containsKey(-46));    // containsKey is very very slow, 
+    //but no method. We cannot make a faster method
+
+    //Loop keyset()
+    for (Integer i : nameMap.keySet()) {
+      System.out.println(i);
+    }
+
+    System.out.println(" - - ");
+    //Loop values
+    for (String s : nameMap.values()) {
+      System.out.println(s);
+    }
+    System.out.println(" - - ");  
+    System.out.println(nameMap.size());
+
+  System.out.println(nameMap.containsValue("Oscar"));   //false 
+  // !!! containsValue is very slow , but no method . you cannot make a faster method 
+
+  // !!!  null can be a key in HashMap
+  // Put, Get, Contain, For Loop,  <= practice them
+
   }
 }

@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ArrayListDemo {
@@ -91,8 +92,15 @@ public class ArrayListDemo {
         }
         System.out.println(arrC.toString());
 
+        //check #sir version 
+
         // Loop
 
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add("abc");
+        objects.add(1);
+        objects.add(LocalDate.of(2024,5, 22));
 
+        //check #sir version
     }
 }

@@ -1,40 +1,43 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 
 class Solution {
 
-    public int countDigits(int num) {
-        int l = String.valueOf(num).length();
-       
-        char[] chArr = Integer.toString(num).toCharArray();
-        int count = 0;
-        String temp = Integer.toString(num);
-        int[] a = new int[temp.length()];
-        for (int i = 0; i < temp.length(); i++) {
-            a[i] = temp.charAt(i) - '0';
-        }
-
-        for (int i = 0; i < a.length; i++) {
-           
-            if (a[i] == 0) {
-                continue;
+        public List<String> splitWordsBySeparator(List<String> words,
+                char separator) {
+            ArrayList<String> al = new ArrayList<>();
+            String s = "\\" + separator;
+            System.out.println(s);
+            List<String> wordList = new ArrayList<>();
+            // String[] sArr =
+            for (int i = 0; i < words.size(); i++) {
+                // System.out.println(Arrays.toString(words.get(i).split(".")));
+                // Arrays.asList(words.get(i).split("\\.")).get(1);
+                System.out.println(Arrays.toString(words.get(i).split(s)));
+                System.out.println(words.get(i).split(s).length);
+                for (int j = 0; j < words.get(i).split(s).length; j++) {
+                    if (words.get(i).split(s)[j] != "") {
+                        wordList.add(words.get(i).split(s)[j]);
+                    }
+                }
             }
-            if ( num % a[i]  == 0) {
-                count++;
-            }
+
+            return wordList;
         }
-
-        System.out.println(Arrays.toString(a));
-
-        if (l == 1) {
-            return 1;
-        }
-        return count;
-    }
-
 
     public static void main(String[] args) {
+
+        List<String> list = Arrays.asList("$easy$","$problem$");
         Solution s = new Solution();
-        System.out.println(s.countDigits(7));
+
+        System.out.println(s.splitWordsBySeparator(list, '$'));
+
+        // String str = "how.to.split.a.string.in.java";
+        // String[] arrOfStr = str.split("\\.");
+        // System.out.println( Arrays.toString(arrOfStr) );
 
     }
 }
