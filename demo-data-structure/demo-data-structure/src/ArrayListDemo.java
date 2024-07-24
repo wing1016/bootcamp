@@ -100,6 +100,23 @@ public class ArrayListDemo {
         objects.add("abc");
         objects.add(1);
         objects.add(LocalDate.of(2024,5, 22));
+        objects.add(new HKID("A1234567"));
+
+        //Polymorphism Part 2 : runtime -> implementation;
+
+        for (Object obj : objects) {
+
+            if (obj.equals(new String("abc"))) {
+                System.out.println("hello abc");
+            } else if(obj.equals(new HKID("A1234567"))){
+                System.out.println("hello HKID");
+            } else if (obj.equals(new Integer(1))) {
+                System.out.println("hello Integer");
+            } else  if (obj.equals(LocalDate.of(2024, 5, 22))) {
+                System.out.println("hello localDate");
+            }
+            
+        }
 
         //check #sir version
     }
