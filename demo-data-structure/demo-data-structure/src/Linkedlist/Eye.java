@@ -1,4 +1,4 @@
-package Linkedlist;
+package linkedlist;
 
 public class Eye {
   public Color color;    //enum Color.BLUE object memory location

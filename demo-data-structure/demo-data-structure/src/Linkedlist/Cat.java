@@ -1,4 +1,4 @@
-package Linkedlist;
+package linkedlist;
 
 public class Cat {
   private Eye[] eyes; //array object memory location
