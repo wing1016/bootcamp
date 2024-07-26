@@ -6,12 +6,14 @@ import java.util.List;
 class Solution {
 
     public List<String> commonChars(String[] words) {
- 
+
         List<String> ls = new ArrayList<>();
         int exist = 0;
         for (int i = 0; i < words[0].length(); i++) { // 0 1 2 3
             for (int j = 0; j < words.length; j++) { // 0 1 2
-                if (words[j].indexOf(words[0].charAt(i)) != -1) {
+                if (words[j].indexOf(words[0].charAt(i)) != -1
+                        && countChar(words[0], words[0].charAt(i)) >= countChar(
+                                words[j], words[j].charAt(i))) {
                     exist++;
                 }
             }

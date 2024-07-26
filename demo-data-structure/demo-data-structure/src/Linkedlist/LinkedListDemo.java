@@ -1,6 +1,9 @@
 package linkedlist;
 
 import java.util.List;
+import java.util.Queue;
+import javax.lang.model.util.SimpleTypeVisitor14;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class LinkedListDemo {
@@ -79,5 +82,57 @@ public class LinkedListDemo {
 
     ll.add("hello");
     System.out.println(ll.lastIndexOf("hello"));
+
+    //Queue.class
+    Queue<String> emails = new LinkedList<String>(); 
+      emails.add("john@email.com");
+      emails.add("peter@email.com");
+      System.out.println(emails.size());   //Collection class method
+      String head = emails.poll();    // poll is remove & return. remove the first item
+      
+      System.out.println(head);
+      emails.add("sally@email.com");
+      emails.add("dicky@email.com");
+
+      String lookUp = emails.peek();
+      System.out.println(lookUp);   //peter@email.com
+
+      //Remove(Object)
+      emails.remove("dicky@email.com"); // Queue remove() is calling String.remove()
+      emails.remove(new String("dicky@email.com")); // 
+      //LinkedList remove(Object) -> LinkedList For loop
+
+      //remove()  < no parameter method
+      emails.remove(); // remove the first item in queue
+
+      //poll() & remove()  is like the same except exception
+      // eg. removing a 唔存在 item
+
+      for (String s : emails) {
+        System.out.println(s);
+      }
+
+      //Convert Queue to ArrayList
+      List<String> strings4 = new ArrayList<>();
+      while (!emails.isEmpty()) {   //isEmpty()
+        strings4.add(emails.poll());    //use case -> online sell iphone
+      //  System.out.println(emails.poll());  < poll 出黎會冇左個ELEMENT
+      }
+      System.out.println(strings4);
+      System.out.println(emails); // [] empty 。after while all item removed
+
+      //Clear()
+      strings4.clear(); //clear all items but still have the backet
+      strings4.add("abc");
+
+      strings4 = null;  //remove the whole object also remove the backet
+      strings4.add("def");  // NPE ( null pointer exception )
+
+      //clear() & peak() is fast , other method is slow ( for LinkedList )
+
+      // use Queue , but only using for loop ( not use while do ) is very strange
+      // you didt use the characteristic of queue.  "while do" is good friend with Queue
+
+      //LeetCode is powerful because leetcode have so many test case.
   }
 }
