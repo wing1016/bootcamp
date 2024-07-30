@@ -57,7 +57,18 @@ public class HashSetDemo {
         result1.add(ar2[i]);
       }
     }
-    System.out.println(result1);   // #sir check sir version
+    System.out.println(result1);   // #sir# check sir version
+
+      // Question 2: Find all duplicated values
+      HashSet<String> result2 = new HashSet<>();
+      ArrayList<String> arrlist = new ArrayList<>();
+      for (String s : arr) {
+        if (!result2.add(s)) {
+          arrlist.add(s);
+        }
+      }
+      System.out.println(arrlist); // ["def"]
+  
 
     // HashSet<String> result2 = new HashSet<>();
     // ArrayList<String> al = new ArrayList<>();

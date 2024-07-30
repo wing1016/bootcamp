@@ -21,6 +21,7 @@ public class Person {
     long after = System.currentTimeMillis();
     System.out.println(after - before); // 13ms
 
+    //java check time
     // persons.add() and persons2.add() are running different implementation.
   }
 }

@@ -37,7 +37,7 @@ public class Superman extends Person implements Flyable, PowerUp {
 
   //hashcode
   @Override
-  public int hashCode(){        // #sir version chk 
+  public int hashCode(){        // #sir# version chk 
     return Objects.hash(super.getName());
   }
 
@@ -72,7 +72,7 @@ public class Superman extends Person implements Flyable, PowerUp {
     s1.fly();
 
 
-    // #sir verion
+    // #sir# verion
     Superman s2 ;
 
     //if you want to eliminate the risk , you need to use instanceof 
@@ -90,7 +90,7 @@ public class Superman extends Person implements Flyable, PowerUp {
     superman.powerUp();
 
     Superman sm3 = (Superman) superman;      // cast PowerUp to Superman 
-    // #sir version here
+    // #si# version here
   }
 
   //interface is more use than parent class (extends) 10 times

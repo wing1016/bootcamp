@@ -26,7 +26,7 @@ public class CurrecnyHolder {
 
    // Solution: use enum as parameters (type-safe: compiler time ensure/check the scope of values)
   public static boolean isHKD2(Currency c) {
-    return "HKD".equals(c.name()); // check with #sir version
+    return "HKD".equals(c.name()); // check with #sir# version
   }
 
   // 1. cannot gurantee there is ONLY one hkd Object memory

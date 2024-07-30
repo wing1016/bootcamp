@@ -77,7 +77,7 @@ public class ArrayListDemo {
         strings.remove("Hello"); // remove will only remove the first match item ( if there is 2 "Hello" in the ArrayList )
         System.out.println(strings);
 
-        System.out.println(strings.get(0));  //world
+        System.out.println(strings.get(0)); // world
 
         // Question get customer age > 30 and name start with J
         Customer[] c = new Customer[] {new Customer(40, "Mary"),
@@ -86,38 +86,54 @@ public class ArrayListDemo {
         ArrayList<Customer> arrC = new ArrayList<Customer>();
 
         for (Customer cus : c) {
-            if ((cus.getAge() > 30 ) || cus.getName().charAt(0) == 'J'   ) {
+            if ((cus.getAge() > 30) || cus.getName().charAt(0) == 'J') {
                 arrC.add(cus);
             }
         }
         System.out.println(arrC.toString());
 
-        //check #sir version 
+        // check #sir version
+
+        // Question 2: Given Person[], retrieve all customer object with age > 30 or
+        // name startsWith "J"
+        Customer[] customers = new Customer[] {new Customer(40, "Mary") //
+                , new Customer(31, "John") //
+                , new Customer(29, "Jason") //
+                , new Customer(29, "Cindy")};
+        // loop
+        ArrayList<Customer> customerList = new ArrayList<>();
+        for (Customer c : customers) {
+            if (c.getAge() > 30
+                    || (c.getName() != null && c.getName().startsWith("J"))) {
+                customerList.add(c);
+            }
+        }
+        System.out.println(customerList);
 
         // Loop
 
         ArrayList<Object> objects = new ArrayList<>();
         objects.add("abc");
         objects.add(1);
-        objects.add(LocalDate.of(2024,5, 22));
+        objects.add(LocalDate.of(2024, 5, 22));
         objects.add(new HKID("A1234567"));
 
-        //Polymorphism Part 2 : runtime -> implementation;
+        // Polymorphism Part 2 : runtime -> implementation;
 
         for (Object obj : objects) {
 
             if (obj.equals(new String("abc"))) {
                 System.out.println("hello abc");
-            } else if(obj.equals(new HKID("A1234567"))){
+            } else if (obj.equals(new HKID("A1234567"))) {
                 System.out.println("hello HKID");
             } else if (obj.equals(new Integer(1))) {
                 System.out.println("hello Integer");
-            } else  if (obj.equals(LocalDate.of(2024, 5, 22))) {
+            } else if (obj.equals(LocalDate.of(2024, 5, 22))) {
                 System.out.println("hello localDate");
             }
-            
+
         }
 
-        //check #sir version
+        // check #sir version
     }
 }
