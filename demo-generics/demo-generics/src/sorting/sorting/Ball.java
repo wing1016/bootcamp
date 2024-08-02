@@ -20,6 +20,10 @@ public class Ball implements Comparable<Ball> {
     return this.number;
   }
 
+  public Color getColor() {
+    return this.color;
+  }
+
   @Override
   public int compareTo(Ball ball) {
     // Objectives: provide your own formula to sort the List<Ball>
@@ -56,6 +60,8 @@ public class Ball implements Comparable<Ball> {
     // Sort
     // Collections.sort() -> call Loop List<Ball> -> ball.compareTo()
     // During compile time, Java
+
+    //Approche 1
     Collections.sort(balls); // < must be put List( arrayList / linkedList ) here, cannot array, hashMap
     //Collections.sort() use List only, not for array 
     //Collections.sort -> is O(n log n)  !!! check "merge sort"
@@ -67,6 +73,15 @@ public class Ball implements Comparable<Ball> {
 
     // Sort by color ? RED -> WHILE -> BLACK
     // Sort by color, and then number ? RED -> WHILE -> BLACK, if same color, larger number go left
+
+    //Approach 2
+    balls.add(new Ball(1009, Color.RED));
+    balls.add(new Ball(-8, Color.BLACK));
+    Collections.sort(balls, new BallSortByColor());
+    System.out.println(balls);
+
+    //#sir code 020824
+
   }
 }
 

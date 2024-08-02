@@ -49,6 +49,32 @@ public class PriorityQueueDemo {
     System.out.println(pq3.poll());     //-900
     System.out.println(pq3.poll());     //12
     System.out.println(pq3.poll());     //46
+    
+    //Write a formula class ( sortByWhat.java )
+    //do add, do poll
+    Queue<Long> pq4 = new  PriorityQueue<>(new SortByWhat());
+    pq4.add(Long.valueOf(100));
+    pq4.add(Long.valueOf(-40));
+    pq4.add(Long.valueOf(9));
+    pq4.add(Long.valueOf(-5));
+    System.out.println(pq4.poll());
+    System.out.println(pq4.poll());
+    System.out.println(pq4.poll());
+    System.out.println(pq4.poll());
+
+    Queue<Customer> pq5 = new  PriorityQueue<>(new CustomerSortByAge());
+
+   // #sir#   code 020824 
+
+   pq5.add(new Customer(40));
+   pq5.add(new Customer(198));
+   pq5.add(new Customer(7));
+   pq5.add(new Customer(-30));
+
+   System.out.println(pq5.poll());
+   System.out.println(pq5.poll());
+   System.out.println(pq5.poll());
+   System.out.println(pq5.poll());
 
   }
 }

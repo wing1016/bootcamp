@@ -5,39 +5,76 @@ import java.util.List;
 
 class Solution {
 
-    public String[] uncommonFromSentences(String s1, String s2) {
-        String s = String.join(" ", s2, s1);
-        List<String> arr = new ArrayList<>();
-        List<String> arr2 = new ArrayList<>();
-        String[] sArr;
-        arr = Arrays.asList(s.split(" "));
-        // arr.addAll(Arrays.asList(s2.split(" ")));
 
-        System.out.println(arr);
-
-        for (int i = 0; i < arr.size(); i++) {
-            // System.out.println(arr.get(i));
-          //  System.out.println(arr.lastIndexOf(arr.get(i)) == arr.indexOf(arr.get(i)));
-                    if ( arr.lastIndexOf(arr.get(i)) == arr.indexOf(arr.get(i))) {
-                        arr2.add(arr.get(i));
-                    }
+    public int numWaterBottles(int numBottles, int numExchange) {
+        int max = 0;
+        int tmp = numBottles;
+        max = max + tmp;
+        System.out.println( max );
+        while (tmp > 0) {
+            if (tmp >= numExchange) {
+                max += tmp / numExchange;
+                tmp = tmp / numExchange + tmp % numExchange;
+            }
+            System.out.println( max );b
+            if (tmp < numExchange) {
+               // max += tmp ;
+                tmp -= tmp;
+                System.out.println("in : "+ tmp);           
+            }
         }
-        System.out.println(arr2);
-        sArr = new String[arr2.size()];
-        arr2.toArray(sArr);
-        System.out.println(Arrays.toString(sArr));
-        return sArr;
+        return max;
     }
+
 
     public static void main(String[] args) {
         Solution s = new Solution();
-
-
-        System.out.println(s.uncommonFromSentences("sweet",
-                "sweetb"));
+        System.out.println( " result "  + s.numWaterBottles(15 , 4));
 
     }
 }
+
+
+/*
+ * 
+ * public int distanceTraveled(int numBottles, int additionalTank) { int d = 0; while (numBottles > 0) { System.out.println(d + "  " + numBottles + "  " + additionalTank); if (numBottles >= 5) { d = d
+ * + 5 * 10; numBottles -= 5; if (additionalTank >= 1) { additionalTank -= 1; numBottles += 1; } System.out.println(d + "  " + numBottles + "  " + additionalTank); } System.out.println(d + "  " +
+ * numBottles + "  " + additionalTank); if (numBottles < 5) { d = d + numBottles * 10; numBottles = numBottles - numBottles; }
+ * 
+ * System.out.println(d + "  " + numBottles + "  " + additionalTank);
+ * 
+ * 
+ * }
+ * 
+ * return d; }
+ * 
+ * 
+ * 
+ */
+
+
+/*
+ * 
+ * public int pivotIndex(int[] nums) { int left = 0; int ttl = 0;
+ * 
+ * for (int i = 0; i < nums.length; i++) { ttl += nums[i]; } System.out.println(ttl);
+ * 
+ * for (int k = 0; k < nums.length; k++) { ttl = ttl - nums[k]; if (left == ttl) { return k; } left += nums[k]; }
+ * 
+ * return -1; }
+ * 
+ * public static void main(String[] args) { Solution s = new Solution(); System.out.println(s.pivotIndex(new int[] {1, 7, 3, 6, 5, 6}));
+ * 
+ * 
+ * }
+ */
+
+
+/*
+ * public int pivotIndex(int[] nums) { int left = 0; int right = 0; for (int i = 0; i < nums.length; i++) { // 0 1 (2) 3 4 5 for (int j = 0; j <= i; j++) { //0 1 left += nums[j]; //
+ * System.out.println("i : " + i + " j : " + j); } for (int k = i ; k < nums.length; k++) { // 3 4 5 // System.out.println(k); right += nums[k]; // System.out.println("i : " + i + " k : " + k); } if
+ * (left == right) { return i; } System.out.println("left : " + left); System.out.println("right : " + right); left = 0; right = 0; } return -1; }
+ */
 
 
 
