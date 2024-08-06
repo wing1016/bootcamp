@@ -1,38 +1,36 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 class Solution {
 
 
-    public int numWaterBottles(int numBottles, int numExchange) {
-        int max = 0;
-        int tmp = numBottles;
-        max = max + tmp;
-        System.out.println( max );
-        while (tmp > 0) {
-            if (tmp >= numExchange) {
-                max += tmp / numExchange;
-                tmp = tmp / numExchange + tmp % numExchange;
+    public int majorityElement(int[] nums) {
+        int l = nums.length / 2;
+        int c = 0;
+        System.out.println(l);
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                c++;
             }
-            System.out.println( max );b
-            if (tmp < numExchange) {
-               // max += tmp ;
-                tmp -= tmp;
-                System.out.println("in : "+ tmp);           
+            System.out.println(c + "  " + l);
+            if (c >= l) {
+                return nums[i];
             }
         }
-        return max;
+        return nums[0];
     }
-
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println( " result "  + s.numWaterBottles(15 , 4));
-
+        System.out.println(
+                s.majorityElement(new int[] { 1}));
     }
 }
+
 
 
 /*
@@ -52,7 +50,6 @@ class Solution {
  * 
  */
 
-
 /*
  * 
  * public int pivotIndex(int[] nums) { int left = 0; int ttl = 0;
@@ -69,14 +66,11 @@ class Solution {
  * }
  */
 
-
 /*
  * public int pivotIndex(int[] nums) { int left = 0; int right = 0; for (int i = 0; i < nums.length; i++) { // 0 1 (2) 3 4 5 for (int j = 0; j <= i; j++) { //0 1 left += nums[j]; //
  * System.out.println("i : " + i + " j : " + j); } for (int k = i ; k < nums.length; k++) { // 3 4 5 // System.out.println(k); right += nums[k]; // System.out.println("i : " + i + " k : " + k); } if
  * (left == right) { return i; } System.out.println("left : " + left); System.out.println("right : " + right); left = 0; right = 0; } return -1; }
  */
-
-
 
 /*
  * 
@@ -92,8 +86,6 @@ class Solution {
  * 
  * 
  */
-
-
 
 /*
  * 2-0
@@ -114,8 +106,6 @@ class Solution {
 // "dadaabaa","bdaaabcc","abccddbb","bbaacdba","ababbbab","ccddbbba","bbdabbda","bdabaacb"
 // "bbddabab","cbcddbdd","bbcadcab","dabcacad","cddcacbc","ccbdbcba","cbddaccc","accdcdbb"
 
-
-
 // public int missingNumber(int[] nums) {
 // // int[] arr = new int[nums.length + 1]
 // String s = Arrays.toString(nums);
@@ -127,14 +117,14 @@ class Solution {
 // String res = sb.toString();
 
 // for (int i = 0; i < s.length(); i++) {
-// System.out.println(s.indexOf(String.valueOf(i)) + " ! " + (s.indexOf(String.valueOf(i)) >=0) + " ^ " + i);
+// System.out.println(s.indexOf(String.valueOf(i)) + " ! " +
+// (s.indexOf(String.valueOf(i)) >=0) + " ^ " + i);
 // if (s.indexOf(String.valueOf(i)) < 0) {
 // return i;
 // }
 // }
 // return 999;
 // }
-
 
 // public List<String> commonChars(String[] words) {
 // List<String> result = new ArrayList<>();
