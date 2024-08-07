@@ -2,26 +2,43 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Bank {
-  public List<Account> accounts;
+  private List<Account> accounts;
+  private String address;
 
-  public Bank(){
+  public Bank() {
     this.accounts = new LinkedList<>();
   }
 
-  public void add(Account acc){
-    accounts.add(acc);
+  public void add(Account account) {
+    //this.accounts.add(account);
+    accounts.add(account);
   }
-  
-  public static class Account {   //
+
+  private static Account createAccount(double amount){  //sir
+    new Account().credit(amount);
+  }
+
+  public static class Account { // private ?
     private static int number = 0;
-    private int accNo;    
-  }
+    private int acctNo;
+    private double balance;
 
-  public Account(){
-    this.accNo = ++number;        //sir code
-  }
+    public Account() {
+      this.acctNo = ++number;
+    }
 
-  public static void main(String[] args) {
-    
+    public int getAccNo(){
+      return this.acctNo;
+    }
+
+    public void credit(double amount){
+      this.balance += amount;
+    }
+
+    public void print(){
+      System.out.println(this.balance);
+      //this.address; 
+      // you cannot access the outer class instance variable ( address ) in static nested class 
+    }
   }
 }
