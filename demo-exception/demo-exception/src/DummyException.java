@@ -1,8 +1,6 @@
 public class DummyException extends BusinessException{
 
-  public DummyException(ErrorCode ec) {
-    super(ec);
-    
+  public DummyException() {
+    super(ErrorCode.INSUFF_BAL);
   }
-  //SIR code
 }

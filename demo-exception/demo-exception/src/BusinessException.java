@@ -1,9 +1,9 @@
 public class BusinessException extends Exception {
  // public class BusinessException extends RuntimeException {   //<<
 
-  private ErrorCode code;
+  private int code;
 
-  public ErrorCode getErrorCode() {
+  public int getErrorCode() {
     return this.code;
   }
 
@@ -20,9 +20,10 @@ public class BusinessException extends Exception {
 
   public BusinessException(ErrorCode ec) {
   //  super(message);
-    this.code = ec;
+  super(ec.getMessage());
+    this.code = ec.getCode();
   }
 
-  // #sir //sir version
+  // #sir# //sir version
 
 }

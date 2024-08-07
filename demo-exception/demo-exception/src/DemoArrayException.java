@@ -21,7 +21,7 @@ public class DemoArrayException {
     try {
       arr[5] = 1;
     } catch (Exception e) {
-      // TODO: handle exception
+
     }
     System.out.println("End of program");
 
@@ -31,12 +31,15 @@ public class DemoArrayException {
     // String is an char array
     // str.substring(0, 6); // java.base/java.lang.String.checkBoundsBeginEnd
 
-    int result;
+    int result = Integer.parseInt("1");
+    System.out.println(result); // 1
+
+    int result2;
     try {
 
-      result = Integer.parseInt("hello"); // string to int
+      result2 = Integer.parseInt("hello"); // string to int
       // java.base/java.lang.NumberFormatException
-      System.out.println(result);
+      System.out.println(result2);
     } catch (NumberFormatException e) {
       result = -1;
       System.out.println("NumberFormatException : " + e.getMessage());
@@ -49,11 +52,11 @@ public class DemoArrayException {
       System.out.println(e.getMessage());
     }
 
-    List<String> strings = new ArrayList<>();   // List - resize when list call get.
-    strings.get(0); //<<
-  
-    List<String> strings2 = new LinkedList<>();   // List - resize when list call get.
-    strings2.get(0);    //<< 
+    List<String> strings = new ArrayList<>(); // List - resize when list call get.
+    strings.get(0); // <<
+
+    List<String> strings2 = new LinkedList<>(); // List - resize when list call get.
+    strings2.get(0); // <<
   }
 
   public static String getDescription(int age) {
