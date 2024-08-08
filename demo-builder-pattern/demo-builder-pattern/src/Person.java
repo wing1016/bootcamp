@@ -2,15 +2,17 @@ public class Person {
     private String name;
     private int age;
 
+    // Builder pattern should not contain any public constructor
     public Person() {}
 
-    public static Builder builder() {
-        return new Person.Builder();
-    }
-
+    // Builder pattern should not contain any public constructor
     private Person(String n, int a) {
         this.name = n;
         this.age = a;
+    }
+
+    public static Builder builder() {
+        return new Person.Builder();
     }
 
     private Person(Builder bd) {
@@ -49,7 +51,7 @@ public class Person {
         }
 
         public Person build() {
-        //  return new Person(this.name, this.age);    
+            // return new Person(this.name, this.age);
             return new Person(this);
         }
     }

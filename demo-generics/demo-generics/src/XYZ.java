@@ -17,11 +17,10 @@ public class XYZ<T, U> {
 
   public static void main(String[] args) {
     XYZ<String, Customer> customers = new XYZ<>();
-
-    customers.setU(123);   // compile error , setU method is for setting customer
+    // customers.setU("abc"); // error, because T -> String, U -> Customer
+    customers.setU(new Customer());
 
     // T can be same as U
     XYZ<String, String> strings = new XYZ<>();
-
   }
 }

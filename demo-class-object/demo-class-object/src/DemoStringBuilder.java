@@ -18,6 +18,9 @@ public class DemoStringBuilder {
     sb.replace(1, 2, "xx");  // no need like that > sb = sb.replace(1, 2, "xx"); 
     System.out.println(sb.toString());
 
+    sb.setCharAt(4, 'A');
+    System.out.println(sb.toString());
+
     //.reverse
     System.out.println(sb.reverse());
 
@@ -25,7 +28,9 @@ public class DemoStringBuilder {
     
     System.out.println(sb.insert(4, '*'));
 
-    String s = sb.substring(0)
+    String s = sb.substring(1, 3);
+    System.out.println(s);
+    System.out.println(sb.toString()); // dlro*woAlxxh
 
     //deleteCharAt
 
