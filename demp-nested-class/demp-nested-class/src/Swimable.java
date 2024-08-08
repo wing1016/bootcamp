@@ -1,4 +1,4 @@
 public interface Swimable {
 
-    //sir # sir
+  void swim(); 
 } 

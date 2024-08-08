@@ -8,11 +8,11 @@ public class NumberBox<T extends Number> {    // we can extends or super here,( 
   }
 
   public static void main(String[] args) {
-    NumberBox<Byte> byteBox = new NumberBox<>((byte) 1);  //int -> byte -> Byte
+    NumberBox<Byte> byteBox = new NumberBox<>((byte) 1); // int -> byte -> Byte
+    // Long extends Number and Byte extends Number
+    //  NumberBox<Byte> has no relationship with NumberBox<Long>
+    // byteBox = new NumberBox<Long>(); // NOT OK
 
-    //#sir version notes
-
-    NumberBox<BigDecimal> bBox = new NumberBox<BigDecimal>(BigDecimal.valueOf(3.4));
-
+    NumberBox<BigDecimal> bBox = new NumberBox<>(BigDecimal.valueOf(3.4));
   }
 }

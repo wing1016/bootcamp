@@ -3,6 +3,7 @@ package sorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import shape.Bird;
 
@@ -80,9 +81,20 @@ public class Ball implements Comparable<Ball> {
     Collections.sort(balls, new BallSortByColor());
     System.out.println(balls);
 
-    //#sir code 020824
+      int x = 3;
+    Comparator<Ball> formula = null;
+    if (x >= 3) {
+      formula = new BallSortByColor();
+    } else {
+      // formula = new BallSortByNumber();
+    }
 
+    Collections.sort(balls, formula);
+    System.out.println(balls);
+    // [Ball(number=1009, color=RED), Ball(number=8, color=RED), Ball(number=10,
+    // color=BLACK), Ball(number=-8, color=BLACK), Ball(number=14, color=WHITE)]
   }
+      
 }
 
 

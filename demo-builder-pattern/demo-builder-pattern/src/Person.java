@@ -49,7 +49,8 @@ public class Person {
         }
 
         public Person build() {
-            return new Person(this.name, this.age);     //sir #sir code
+        //  return new Person(this.name, this.age);    
+            return new Person(this);
         }
     }
 

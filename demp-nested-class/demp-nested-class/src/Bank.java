@@ -10,11 +10,11 @@ public class Bank {
   }
 
   public void add(Account account) {
-    //this.accounts.add(account);
+    // this.accounts.add(account);
     accounts.add(account);
   }
 
-  private static Account createAccount(double amount){  //sir
+  private static void createAccount(double amount) { 
     new Account().credit(amount);
   }
 
@@ -27,18 +27,18 @@ public class Bank {
       this.acctNo = ++number;
     }
 
-    public int getAccNo(){
+    public int getAccNo() {
       return this.acctNo;
     }
 
-    public void credit(double amount){
+    public void credit(double amount) {
       this.balance += amount;
     }
 
-    public void print(){
+    public void print() {
       System.out.println(this.balance);
-      //this.address; 
-      // you cannot access the outer class instance variable ( address ) in static nested class 
+      // this.address;
+      // you cannot access the outer class instance variable ( address ) in static nested class
     }
   }
 }

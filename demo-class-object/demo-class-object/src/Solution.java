@@ -9,21 +9,21 @@ import java.util.stream.Stream;
 
 class Solution {
 
-    public boolean checkPerfectNumber(int num) {
-        List<Integer> l = new ArrayList<>();
-        int s = 0;
-        for (int i = 1; i <= num / 2; i++) {
-            if (num % i == 0) {
-                s += i;
-                System.out.println(s);
-            }
+    public String convertToBase7(int num) {
+        int base = 1;
+        int ans = 0;
+        while (num != 0) {
+            int rem = num % 7; 
+            ans += base * rem;
+            base *= 10;
+            num /= 7;   System.out.print(rem + "   ");System.out.print(ans + "   "); System.out.println(num);
         }
-        return num == s ? true : false;
+        return Integer.toString(ans);
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.checkPerfectNumber(7));
+        System.out.println(s.convertToBase7(100));
     }
 }
 

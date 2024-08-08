@@ -3,19 +3,19 @@ import java.util.List;
 
 public class DemoLambda {
 
-
-  Swimable p = new Swimable() {
-    @Override
-    public void swim() {
-      System.out.println("I am swimming...");
-    }
-  };
-   p.swim(); // #sir
-
-
-  // Lambda expression
-  // The reason that we can use "() -> implementation" is that interface contains 1 abstract method only
   public static void main(String[] args) {
+    Swimable p = new Swimable() {
+      @Override
+      public void swim() {
+        System.out.println("I am swimming...");
+      }
+    };
+    p.swim(); // #sir
+
+
+    // Lambda expression
+    // The reason that we can use "() -> implementation" is that interface contains 1 abstract method only
+
     Swimable person = () -> System.out.println("I am swimming...");
     System.out.println(person.toString());
     person.swim();
@@ -65,8 +65,8 @@ public class DemoLambda {
       } else {
         System.out.println("Hello");
       }
-     // t += s;
-     // return 1;    lambda dor each cannot return things 
+      // t += s;
+      // return 1; lambda dor each cannot return things
     });
 
   }

@@ -1,6 +1,4 @@
 @FunctionalInterface
-
-public interface Swimable{
+public interface Swimable {
   void swim();
 }
-  

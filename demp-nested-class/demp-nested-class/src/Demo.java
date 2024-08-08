@@ -11,20 +11,38 @@ public class Demo {
 
         Box box = new Box();
         Box.Ball ball = box.new Ball();
-        System.out.println(ball.getCapacity());
+        System.out.println(ball.getCapacity()); // 10
         box.add(ball);
-        System.out.println(box.getBalls().size());
+        System.out.println(box.getBalls().size()); // 1
 
-        //Anonoymous Inner CLass
-        Swimable John = new Swimable() {
-            @Override
-            public void swim(){   // #sir 
-                System.out.println("John is swimming");
-            }
-        };
+        // Anonoymous Inner CLass
+        int x = 3;
 
-        j
-        John.swim();    //sir #sir code Sally part
+        if (x == 3) {
+            // Anonymous Inner Class
+            Swimable john = new Swimable() {
+                @Override
+                public void swim() {
+                    System.out.println("John is swimming ....");
+                }
+            };
 
+            john.swim();
+        } else {
+            Swimable sally = new Swimable() {
+                public String name = "Sally";
+
+                public String getName() {
+                    return this.name;
+                }
+
+                @Override
+                public void swim() {
+                    System.out.println("Sally is swimming ....");
+                }
+            };
+            sally.swim();
+            // sally.getName(); // Polymorphsim
+        }
     }
 }
