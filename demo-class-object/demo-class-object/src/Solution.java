@@ -1,35 +1,56 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Stream;
+
 
 class Solution {
 
-    public String convertToBase7(int num) {
-        int base = 1;
-        int ans = 0;
-        while (num != 0) {
-            int rem = num % 7; 
-            ans += base * rem;
-            base *= 10;
-            num /= 7;   System.out.print(rem + "   ");System.out.print(ans + "   "); System.out.println(num);
+    public int dayOfYear(String date) {
+        int[] arr = new int[] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int year = Integer.parseInt(date.substring(0, 4));
+        int mth = Integer.parseInt(date.substring(5, 7));
+        int day = Integer.parseInt(date.substring(8, 10));
+        int n = 0;
+        int m = 0;
+
+        System.out.println(year);
+        System.out.println(mth);
+        System.out.println(day);
+
+        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) ) { 
+            arr[1] = 29;
         }
-        return Integer.toString(ans);
+
+        for (int i = 0; i < mth - 1; i++) {
+            m += arr[i];
+        }
+
+        n = m + day;
+        // if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) && mth > ) { // code here ...
+        //     System.out.println("leap year");
+        //     n = m + day + 1;
+        // } else {
+        //     n = m + day;
+        // }
+
+        return n;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.convertToBase7(100));
+        System.out.println("");
+        System.out.println(s.dayOfYear("2016-02-09"));
+
+        int year2 = 1980;
+        // same as the above, but it will print out.
+        if (year2 % 4 == 0 && (year2 % 100 != 0 || year2 % 400 == 0)) { // code here ...
+            // System.out.println( year2 + " is a leap year.");
+        }
+
     }
 }
 
 
 
 /*
+ * "2019-01-09" "2019-02-10"
  * 
  * public int distanceTraveled(int numBottles, int additionalTank) { int d = 0; while (numBottles > 0) { System.out.println(d + "  " + numBottles + "  " + additionalTank); if (numBottles >= 5) { d = d
  * + 5 * 10; numBottles -= 5; if (additionalTank >= 1) { additionalTank -= 1; numBottles += 1; } System.out.println(d + "  " + numBottles + "  " + additionalTank); } System.out.println(d + "  " +

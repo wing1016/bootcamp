@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class DemoMapLambda {
@@ -29,8 +30,19 @@ public class DemoMapLambda {
     map.put("Jenny", 12);
 
     // All entry value + 2
-    
 
-    //sir code
+    map.put("Peter", map.get("Peter") + 2); // 12
+    map.put("Jenny", map.get("Jenny") + 2);
+    map.put("Vincent", map.get("Vincent") + 2);
+    map.put("John", map.get("John") + 2);
+    System.out.println(map.get("Vincent")); // 10
+
+    BiFunction<Integer, Integer, Integer> addValue =
+        (oldValue, newValue) -> oldValue + newValue;
+    map.merge("Peter", 3, addValue); // addValue.apply
+    map.merge("Sue", 3, addValue);
+
+    System.out.println(map.get("Peter")); // 15
+    System.out.println(map.get("Sue")); // 3
   }
 }
