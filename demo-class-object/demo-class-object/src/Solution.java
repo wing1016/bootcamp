@@ -1,48 +1,55 @@
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 class Solution {
 
-    public int dayOfYear(String date) {
-        int[] arr = new int[] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        int year = Integer.parseInt(date.substring(0, 4));
-        int mth = Integer.parseInt(date.substring(5, 7));
-        int day = Integer.parseInt(date.substring(8, 10));
-        int n = 0;
-        int m = 0;
+    public boolean strongPasswordCheckerII(String password) {
+        boolean lo = false;
+        boolean up = false;
+        boolean di = false;
+        boolean sc = false;
+        boolean adj = false;
+        Integer inte;
+        if (password.length() < 8) {
+            return false;
+        }
+        for (int i = 0; i < password.length(); i++) {
+            inte = Integer.valueOf(password.charAt(i));
 
-        System.out.println(year);
-        System.out.println(mth);
-        System.out.println(day);
+            if (inte > 96 && inte < 123) {
+                lo = true;
+            }
+            if (inte > 64 && inte < 91) {
+                up = true;
+            }
+            if (inte > 47 && inte < 58) {
+                di = true;
+            }
+            if (inte == 33 || (inte > 34 && inte < 39) || inte == 64
+                    || inte == 94 || (inte > 39 && inte < 46) || inte == 94) {
+                sc = true;
+            }
+            if (i != password.length()-1) {
+                if (password.charAt(i) == password.charAt(i+1)) {
+                    adj = true;
+                }                
+            }
 
-        if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) ) { 
-            arr[1] = 29;
+            System.out.println(Integer.valueOf(password.charAt(i)));
+        }
+        System.out.println(lo + "" + up + di + sc);
+        if (lo == true && up == true && di == true && sc == true && adj == false) {
+            return true;
         }
 
-        for (int i = 0; i < mth - 1; i++) {
-            m += arr[i];
-        }
-
-        n = m + day;
-        // if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0) && mth > ) { // code here ...
-        //     System.out.println("leap year");
-        //     n = m + day + 1;
-        // } else {
-        //     n = m + day;
-        // }
-
-        return n;
+        return false;
     }
+
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println("");
-        System.out.println(s.dayOfYear("2016-02-09"));
-
-        int year2 = 1980;
-        // same as the above, but it will print out.
-        if (year2 % 4 == 0 && (year2 % 100 != 0 || year2 % 400 == 0)) { // code here ...
-            // System.out.println( year2 + " is a leap year.");
-        }
+        System.out.println(s.strongPasswordCheckerII("1!*wWW!@#$%"));
 
     }
 }
