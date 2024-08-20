@@ -42,7 +42,7 @@ public class DemoArrayException {
       System.out.println(result2);
     } catch (NumberFormatException e) {
       result = -1;
-      System.out.println("NumberFormatException : " + e.getMessage());
+      System.out.println("NumberFormatException ! : " + e.getMessage());
     }
     System.out.println(result);
 
@@ -53,10 +53,10 @@ public class DemoArrayException {
     }
 
     List<String> strings = new ArrayList<>(); // List - resize when list call get.
-    strings.get(0); // <<
+ //   strings.get(0); // <<
 
     List<String> strings2 = new LinkedList<>(); // List - resize when list call get.
-    strings2.get(0); // <<
+    strings2.get(0); // <<  IndexOutOfBoundsException
   }
 
   public static String getDescription(int age) {
@@ -70,6 +70,4 @@ public class DemoArrayException {
     }
     return "Children";
   }
-
-
 }

@@ -23,8 +23,8 @@ public class DemoOptional {
     Optional<String> result = generate2(s);
     char target = ' ';
     // generate2(s).charAt(); // error , generate2(s) may be null
-    if (result.isPresent()) {
-      target = result.get().charAt(0); //sir
+    if (result.isPresent()) { // not null
+      target = result.get().charAt(0); //sir  
     } else {
       // null
       target = ' ';
@@ -91,9 +91,8 @@ public class DemoOptional {
        Optional<String> optCustomer4 = null;
        optCustomer4.orElse("Hello"); //NPE
 
-       Optional<String> optCustomer5 = null;
-       optCustomer5.orElse("Hello"); 
-
+       Optional<String> optCustomer5 = Optional.ofNullable(null);
+       optCustomer5.orElse("dummy"); // OK
 
   }
 

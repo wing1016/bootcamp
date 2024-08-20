@@ -64,8 +64,8 @@ public class DemoOperator{
     boolean r9 = 3 > 10 && 20 < 19; //false or false => false
 
     char c10 = 'A';
-    boolean b12 = c10 ==c11; // false  係咪等如
     char c11 = 'B';
+    boolean b12 = c10 ==c11; // false  係咪等如
     System.out.println("b12=" + b12);
 
     boolean b13 = 'c' != '0'; // true , 係咪唔等如 !=

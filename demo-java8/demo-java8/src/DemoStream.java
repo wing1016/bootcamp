@@ -144,7 +144,7 @@ public class DemoStream {
 
     System.out.println(animals); // [Lion, Tiger, Bears]
 
-    // Group By
+    // GroupBy
     List<Staff> staffs =
         Arrays.asList(new Staff("HR", "John"), new Staff("IT", "Peter"),
             new Staff("MKT", "Sally"), new Staff("IT", "Vincent"));
@@ -195,10 +195,11 @@ public class DemoStream {
     // Special case
     List<Integer> integers2 =
         Stream.of(1, 2, 3, 4).map(i -> i + 1).collect(Collectors.toList());
+        System.out.println(integers2); // [3, 4, 5]
 
     // map() -> interminate operation -> it wont be execute until terminal operation
     Stream<Integer> integers3 = Stream.of(2, 3, 4).map(i -> {
-      //sir
+      
       System.out.println(i);  // do not execute if there is no terminal operation to run
       return i + 1;
     });
@@ -210,12 +211,12 @@ public class DemoStream {
     // System.out.println(integers3);
 
     //count
-    System.out.println(integers3.count());  //3
     
     // terminal operation observes interminate operations, check if they will make impact or not
     // so, finally map() won't execute, because it will not affect the result of count()
-
+    
     //sir
+    System.out.println(integers3.count());  //3
 
   }
 }

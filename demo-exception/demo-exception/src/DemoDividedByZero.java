@@ -35,7 +35,7 @@ public class DemoDividedByZero {
         System.out.println(expense);
 
 
-        //Approach 2
+        // Approach 2
         try {
             double money = excpensePerEmployee2();
             System.out.println(money);
@@ -59,27 +59,23 @@ public class DemoDividedByZero {
         // use try catch at where the exception throw !!!
         try {
             return getDepartmentExpense() / getEmployeeCount(); // ArithmeticException: / by zero
-        } catch (Exception e) {
-            return getDepartmentExpense();
+        } catch (ArithmeticException e) {
+            return getDepartmentExpense(); // fix
         }
     }
 
     // Approach 2
     // when a method throw unchecked exception without handling, excpetion throw to method caller
+
     public static int excpensePerEmployee2() {
-        // use try catch at where the exception throw !!!
-        try {
-            return getDepartmentExpense() / getEmployeeCount(); // ArithmeticException: / by zero
-        } catch (Exception e) {
-            return getDepartmentExpense();
-        }
+        return getDepartmentExpense() / getEmployeeCount();
     }
 
-     // Approach 3
-    // when a method throw unchecked exception without handling, excpetion throw to method caller
-    public static int excpensePerEmployee3() {    
+    // Approach 3
+
+    public static int excpensePerEmployee3() {
         try {
-            return getDepartmentExpense() / getEmployeeCount(); // ArithmeticException: / by zero
+            return getDepartmentExpense() / getEmployeeCount();
         } catch (ArithmeticException e) {
             throw new EmployeeCountZeroException();
         }
