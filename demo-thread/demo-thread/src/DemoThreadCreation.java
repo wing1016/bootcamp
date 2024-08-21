@@ -19,5 +19,18 @@ public class DemoThreadCreation {
       
     }
     System.out.println("--- Program End ---");
+
+    //Extends Thread.class
+   // Thread thread2 = new AddStringManyTimeThread();
+    AddStringManyTimeThread thread2 = new AddStringManyTimeThread();
+    thread2.start();    //run()
+      
+    try {
+        thread2.join();
+    } catch (InterruptedException e) {
+       
+    }
+        System.out.println(thread2.getStrings().size());
+    //sir
   }
 }
