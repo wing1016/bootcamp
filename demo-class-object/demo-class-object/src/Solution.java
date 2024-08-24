@@ -9,24 +9,32 @@ import java.util.TreeSet;
 
 class Solution {
 
-    public String restoreString(String s, int[] indices) {  
-        int l = s.length();
-        // String str = "";
-        char[] cArr = new char[l];
- 
-        for (int i = 0; i < l; i++) {
-            cArr[indices[i]] = s.charAt(i);
+    public int[][] flipAndInvertImage(int[][] image) {
+        int[][] newArr = new int[image.length][image[0].length];
+        for (int i = 0; i < image.length; i++) {
+            for (int j = 0; j < image[i].length; j++) {
+                if (image[i][j] == 0) {
+                    newArr[i][j] = 1;
+                } else {
+                    newArr[i][j] = 0;
+                }
+            }
         }
-        System.out.println(cArr);
-        
-        return String.valueOf(cArr);
+        System.out.println(Arrays.deepToString(newArr));
+        int t;
+        for (int i = 0; i < newArr.length; i++) {
+            for (int j = 0; j < newArr[i].length / 2; j++) {
+                t = newArr[i][j];
+                newArr[i][j] = newArr[i][(newArr[i].length - 1) - j];
+                newArr[i][(newArr[i].length - 1) - j] = t;
+            }
+        }
+        return newArr;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(s.restoreString("codeleet",
-                new int[] {4, 5, 6, 7, 0, 2, 1, 3}));
-
+        System.out.println(Arrays.deepToString(s.flipAndInvertImage(
+                new int[][] {{1, 1, 0}, {1, 0, 1}, {0, 0, 0}})));
     }
 }
-

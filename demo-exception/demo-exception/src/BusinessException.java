@@ -23,7 +23,6 @@ public class BusinessException extends Exception {
     super(ec.getMessage());
     this.code = ec.getCode();
   }
-
-  // #sir# //sir version
+  
 
 }

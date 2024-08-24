@@ -214,8 +214,7 @@ public class DemoStream {
     
     // terminal operation observes interminate operations, check if they will make impact or not
     // so, finally map() won't execute, because it will not affect the result of count()
-    
-    //sir
+        
     System.out.println(integers3.count());  //3
 
   }

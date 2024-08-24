@@ -79,6 +79,10 @@ public class DemoVector {
     System.out.println(" Vector : " + strings2.size()); // NOT OK, this is main thread // 0
     System.out.println("Program run.....");
 
-    //sir
+    // Steps to resize the ArrayList/ Array (add element)
+    // 1. create a new array (old length + 1)
+    // 2. copy of the old array to new array
+    // 3. Add the new element at the array
+    // 4. reassign the new obj ref to the old obj ref
   }
 }

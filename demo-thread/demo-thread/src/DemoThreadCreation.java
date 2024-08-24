@@ -31,6 +31,6 @@ public class DemoThreadCreation {
        
     }
         System.out.println(thread2.getStrings().size());
-    //sir
+    
   }
 }
