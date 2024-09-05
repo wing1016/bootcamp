@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
@@ -9,32 +10,32 @@ import java.util.TreeSet;
 
 class Solution {
 
-    public int[][] flipAndInvertImage(int[][] image) {
-        int[][] newArr = new int[image.length][image[0].length];
-        for (int i = 0; i < image.length; i++) {
-            for (int j = 0; j < image[i].length; j++) {
-                if (image[i][j] == 0) {
-                    newArr[i][j] = 1;
-                } else {
-                    newArr[i][j] = 0;
-                }
+    public int[] decompressRLElist(int[] nums) {
+        List<Integer> arr = new ArrayList<>();
+        int fre;
+        int val;
+        // ArrayList<Integer> integers2 = new ArrayList<Integer>();
+        // List<Integer> markSix = new LinkedList<>();
+        for (int i = 0; i < nums.length; i += 2) {
+            fre = nums[i];
+            val = nums[i + 1];
+            for (int j = 0; j < fre; j++) {
+                arr.add(val);
             }
+            fre = 0;
+            val = 0;
         }
-        System.out.println(Arrays.deepToString(newArr));
-        int t;
-        for (int i = 0; i < newArr.length; i++) {
-            for (int j = 0; j < newArr[i].length / 2; j++) {
-                t = newArr[i][j];
-                newArr[i][j] = newArr[i][(newArr[i].length - 1) - j];
-                newArr[i][(newArr[i].length - 1) - j] = t;
-            }
+        int l = arr.size();
+        int[] tmp = new int[l];
+        for (int i = 0; i < l; i++) {
+           tmp[i] = arr.get(i); 
         }
-        return newArr;
+        System.out.println(arr);
+        return tmp;
     }
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(Arrays.deepToString(s.flipAndInvertImage(
-                new int[][] {{1, 1, 0}, {1, 0, 1}, {0, 0, 0}})));
+        System.out.println(s.decompressRLElist(new int[] {1, 2, 3, 4}));
     }
 }
