@@ -25,7 +25,10 @@ import org.junit.jupiter.params.provider.CsvSource;
 // public class AppTest { << no need to use public, no meaning, this class is not for you to new!!!
 class AppTest {
 
-  //sir
+  
+
+    // !!! After adding dependency "junit-jupiter-params", you can use ParameterizedTest & CsvSource
+    @DisplayName("Test App.sum()")
 
   // junit-jupiter-params!!! adding dependency 
   @ParameterizedTest

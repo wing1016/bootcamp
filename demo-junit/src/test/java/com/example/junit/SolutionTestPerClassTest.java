@@ -9,11 +9,19 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.ClassOrderer.OrderAnnotation;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+
+//import org.junit.jupiter.api.ClassOrderer.OrderAnnotation;
+
+
+
+// !!! This is "Per Class" testing environment
+// It will use one object to call all test methods.
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 //@TestMethodOrder(OrderAnnotation.class)
 //sir
+@TestMethodOrder(OrderAnnotation.class)
 public class SolutionTestPerClassTest {
 
   private int x;
@@ -55,14 +63,12 @@ public class SolutionTestPerClassTest {
     assertEquals(2, this.x);
   }
 
+  // For Reference Only.
   public static void main(String[] args) {
-    SolutionTestPerClassTest st1 = new SolutionTestPerClassTest();
     SolutionTestPerClassTest.init();
-    // st1.init();
-
-    // st1.test();
-    // st1.test2();
-    // st1.close();
+    SolutionTestPerClassTest st1 = new SolutionTestPerClassTest();
+    st1.test2(); // goes first
+    st1.test();
     SolutionTestPerClassTest.close();
   }
 }
