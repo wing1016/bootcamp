@@ -36,7 +36,7 @@ public class DemoHamcrestTest {
   }
 
   @Test
-  void testList() {
+  void testList() {         // !!! good to use for testing list
     List<String> strings = List.of("abc", "ijk", "xyz");
     assertThat(strings, hasSize(3));
     // !!! conatins() -> contains all with ordering
