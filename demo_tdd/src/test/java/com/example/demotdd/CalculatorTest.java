@@ -13,6 +13,6 @@ public class CalculatorTest {
         new Calculator(Arrays.asList(3,10,2));
         assertEquals(15, new Calculator(Arrays.asList(3,10,2)).sum());
         assertEquals(99, new Calculator(Arrays.asList(-3,100,2)).sum());
-        //sir
+        //  sir
     }
 }
