@@ -48,7 +48,7 @@ public class HashMapDemo {
       System.out.println(i);
     }
 
-    System.out.println(" - - ");
+    System.out.println(" - - --");
     //Loop values
     for (String s : nameMap.values()) {
       System.out.println(s);

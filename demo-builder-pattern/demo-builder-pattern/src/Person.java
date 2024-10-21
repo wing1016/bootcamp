@@ -36,6 +36,10 @@ public class Person {
         this.age = a;
     }
 
+    public String toString(){
+        return " Name : " + this.name + " Age : " + this.age;
+    }
+
     public static class Builder {
         private String name;
         private int age;
@@ -65,5 +69,8 @@ public class Person {
         // Builder pattern
         Person p2 = Person.builder().age(18).name("John").build();
         System.out.println(p2.getName() + " ! " + p2.getAge());
+
+        Person p3 = new Person("Peter",4);
+        System.out.println(p3);
     }
 }
